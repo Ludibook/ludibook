@@ -1,0 +1,1947 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#3D5AFE">
+
+<title>Ludibook — Exercices éducatifs interactifs pour vos livres scolaires</title>
+<meta name="description" content="Ludibook, studio marocain spécialisé dans la création d'exercices et de jeux éducatifs interactifs pour les maisons d'édition et éditeurs de manuels scolaires. Livre papier → QR Code → activité interactive.">
+<meta name="keywords" content="exercices éducatifs interactifs, jeux éducatifs interactifs, contenu éducatif numérique, exercices scolaires interactifs, activités pédagogiques interactives, numérique éducatif Maroc, édition scolaire Maroc, ressources pédagogiques numériques">
+<meta name="author" content="Ludibook">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.ludibook.ma/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_MA">
+<meta property="og:site_name" content="Ludibook">
+<meta property="og:title" content="Ludibook — Donnez une nouvelle dimension à vos livres scolaires">
+<meta property="og:description" content="Nous transformons les exercices de vos manuels en activités éducatives interactives, accessibles par QR code sur ordinateur, tablette et tableau interactif.">
+<meta property="og:url" content="https://www.ludibook.ma/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ludibook — Exercices éducatifs interactifs">
+<meta name="twitter:description" content="Studio marocain de création d'activités éducatives interactives pour l'édition scolaire.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%233D5AFE'/><path d='M28 30h20a12 12 0 0 1 12 12v28H40a12 12 0 0 1-12-12V30z' fill='white'/><circle cx='68' cy='40' r='9' fill='%23FFC93C'/></svg>">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Ludibook",
+  "description": "Studio marocain spécialisé dans la création d'exercices et de jeux éducatifs interactifs destinés aux enfants, conçus pour compléter les livres et manuels scolaires.",
+  "url": "https://www.ludibook.ma/",
+  "email": "contact@ludibook.ma",
+  "telephone": "+212 522 00 00 00",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Casablanca",
+    "addressCountry": "MA"
+  },
+  "areaServed": "MA",
+  "knowsAbout": [
+    "exercices éducatifs interactifs",
+    "contenu éducatif numérique",
+    "édition scolaire",
+    "activités pédagogiques interactives"
+  ]
+}
+</script>
+
+<style>
+/* ============ RESET & BASE ============ */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.65;
+  font-size:16px;
+  overflow-x:hidden;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:0;background:none}
+h1,h2,h3,h4{line-height:1.2;margin:0;font-weight:800;letter-spacing:-.02em}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+
+:root{
+  --primary:#3D5AFE;
+  --primary-600:#2E45D8;
+  --primary-700:#2236B4;
+  --primary-50:#EEF1FF;
+  --accent:#FF8A3D;
+  --accent-50:#FFF3E9;
+  --yellow:#FFC93C;
+  --green:#20C997;
+  --green-50:#E6FAF4;
+  --pink:#FF6B9D;
+  --purple:#8B5CF6;
+  --ink:#0E1633;
+  --ink-2:#39426A;
+  --muted:#6B7599;
+  --line:#E4E8F5;
+  --bg:#F7F9FF;
+  --white:#fff;
+  --radius:20px;
+  --radius-sm:12px;
+  --shadow-sm:0 2px 10px rgba(14,22,51,.05);
+  --shadow:0 14px 34px rgba(14,22,51,.08);
+  --shadow-lg:0 28px 70px rgba(14,22,51,.13);
+  --container:1180px;
+}
+
+/* ============ LAYOUT ============ */
+.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 22px}
+section{padding:88px 0;position:relative}
+section[id]{scroll-margin-top:84px}
+
+.section-head{max-width:720px;margin:0 auto 52px;text-align:center}
+.section-head h2{font-size:clamp(1.7rem,3.4vw,2.5rem);margin-bottom:14px}
+.section-head p{color:var(--muted);font-size:1.05rem}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--primary);background:var(--primary-50);
+  padding:7px 15px;border-radius:100px;margin-bottom:18px;
+}
+
+/* ============ BUTTONS ============ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-weight:700;font-size:.95rem;
+  padding:14px 26px;border-radius:100px;
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+  white-space:nowrap;
+}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 10px 24px rgba(61,90,254,.32)}
+.btn-primary:hover{background:var(--primary-600);transform:translateY(-2px);box-shadow:0 16px 32px rgba(61,90,254,.38)}
+.btn-outline{background:#fff;color:var(--ink);border:1.5px solid var(--line);box-shadow:var(--shadow-sm)}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px)}
+.btn-accent{background:var(--accent);color:#fff;box-shadow:0 10px 24px rgba(255,138,61,.32)}
+.btn-accent:hover{background:#F5772A;transform:translateY(-2px)}
+.btn-ghost{color:var(--primary);font-weight:700;padding:10px 4px}
+.btn-ghost:hover{gap:14px}
+.btn-lg{padding:17px 34px;font-size:1rem}
+
+:focus-visible{outline:3px solid rgba(61,90,254,.45);outline-offset:3px;border-radius:8px}
+
+/* ============ HEADER ============ */
+.header{
+  position:sticky;top:0;z-index:200;
+  background:rgba(247,249,255,.82);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;
+  transition:border-color .25s, box-shadow .25s, background .25s;
+}
+.header.scrolled{border-bottom-color:var(--line);box-shadow:0 4px 22px rgba(14,22,51,.05);background:rgba(255,255,255,.9)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+
+.logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.24rem;letter-spacing:-.03em;color:var(--ink)}
+.logo-mark{
+  width:38px;height:38px;border-radius:11px;flex:0 0 38px;
+  background:linear-gradient(135deg,var(--primary) 0%,#6D82FF 100%);
+  display:grid;place-items:center;box-shadow:0 8px 18px rgba(61,90,254,.3);
+}
+.logo-mark svg{width:21px;height:21px}
+.logo span b{color:var(--primary)}
+
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{
+  font-size:.92rem;font-weight:600;color:var(--ink-2);
+  padding:9px 14px;border-radius:100px;transition:color .18s, background .18s;
+}
+.nav-links a:hover{color:var(--primary);background:var(--primary-50)}
+
+.nav-cta{display:flex;align-items:center;gap:12px}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid var(--line);background:#fff;place-items:center}
+.burger span{display:block;width:19px;height:2px;background:var(--ink);border-radius:2px;position:relative;transition:.25s}
+.burger span::before,.burger span::after{content:'';position:absolute;left:0;width:19px;height:2px;background:var(--ink);border-radius:2px;transition:.25s}
+.burger span::before{top:-6px}
+.burger span::after{top:6px}
+.burger.open span{background:transparent}
+.burger.open span::before{top:0;transform:rotate(45deg)}
+.burger.open span::after{top:0;transform:rotate(-45deg)}
+
+/* ============ HERO ============ */
+.hero{padding:70px 0 90px;overflow:hidden}
+.hero::before{
+  content:'';position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(720px 420px at 82% 8%, rgba(61,90,254,.13), transparent 65%),
+    radial-gradient(560px 380px at 6% 78%, rgba(255,201,60,.16), transparent 65%),
+    radial-gradient(500px 340px at 50% 110%, rgba(32,201,151,.10), transparent 65%);
+}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+
+.hero h1{font-size:clamp(2.05rem,4.4vw,3.3rem);margin-bottom:20px;letter-spacing:-.035em}
+.hero h1 em{font-style:normal;color:var(--primary);position:relative;white-space:nowrap}
+.hero h1 em::after{
+  content:'';position:absolute;left:0;right:0;bottom:2px;height:9px;
+  background:rgba(255,201,60,.45);border-radius:6px;z-index:-1;
+}
+.hero p.lead{font-size:1.1rem;color:var(--ink-2);max-width:560px;margin-bottom:32px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px}
+.hero-trust{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:.87rem;color:var(--muted);font-weight:600}
+.hero-trust span{display:flex;align-items:center;gap:7px}
+.hero-trust svg{width:16px;height:16px;flex:0 0 16px;color:var(--green)}
+
+/* Hero illustration */
+.hero-visual{position:relative;height:440px}
+.hv-book{
+  position:absolute;left:0;top:32px;width:230px;
+  background:#fff;border-radius:16px;padding:20px;
+  box-shadow:var(--shadow-lg);
+  transform:rotate(-6deg);z-index:2;
+  border:1px solid var(--line);
+}
+.hv-book-top{display:flex;gap:8px;align-items:center;margin-bottom:14px}
+.hv-dot{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.hv-book h4{font-size:.8rem;font-weight:800;color:var(--ink);margin-bottom:12px}
+.hv-line{height:7px;border-radius:4px;background:#EEF1F9;margin-bottom:8px}
+.hv-line.w1{width:100%}.hv-line.w2{width:82%}.hv-line.w3{width:66%}.hv-line.w4{width:90%}
+.hv-exercise{
+  margin-top:14px;padding:12px;border-radius:11px;background:var(--primary-50);
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+}
+.hv-exercise small{font-size:.68rem;font-weight:700;color:var(--primary);line-height:1.3}
+.hv-qr{width:40px;height:40px;flex:0 0 40px;background:#fff;border-radius:7px;padding:4px}
+
+.hv-arrow{position:absolute;left:222px;top:150px;width:110px;height:80px;z-index:1;color:var(--primary);opacity:.55}
+
+.hv-tablet{
+  position:absolute;right:0;top:80px;width:330px;
+  background:#fff;border-radius:22px;padding:14px;
+  box-shadow:var(--shadow-lg);border:1px solid var(--line);
+  transform:rotate(3deg);z-index:3;
+}
+.hv-screen{
+  border-radius:14px;background:linear-gradient(160deg,#F4F7FF,#EAF0FF);
+  padding:18px;min-height:236px;
+}
+.hv-screen-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.hv-screen-head small{font-size:.72rem;font-weight:800;color:var(--ink-2)}
+.hv-pill{font-size:.62rem;font-weight:800;background:var(--green-50);color:#0E9E77;padding:4px 10px;border-radius:100px}
+.hv-items{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-bottom:16px}
+.hv-item{
+  width:44px;height:44px;border-radius:12px;background:#fff;
+  display:grid;place-items:center;font-size:1.3rem;
+  box-shadow:0 3px 9px rgba(14,22,51,.07);
+  animation:hvFloat 3s ease-in-out infinite;
+}
+.hv-item:nth-child(2){animation-delay:.25s}
+.hv-item:nth-child(3){animation-delay:.5s}
+.hv-item:nth-child(4){animation-delay:.75s}
+.hv-item:nth-child(5){animation-delay:1s}
+@keyframes hvFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.hv-answers{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.hv-answers span{
+  height:34px;border-radius:9px;background:#fff;display:grid;place-items:center;
+  font-size:.8rem;font-weight:800;color:var(--ink-2);box-shadow:0 3px 9px rgba(14,22,51,.06);
+}
+.hv-answers span.ok{background:var(--green);color:#fff}
+
+.hv-badge{
+  position:absolute;bottom:14px;left:36px;z-index:4;
+  background:#fff;border-radius:100px;padding:10px 18px;
+  box-shadow:var(--shadow);display:flex;align-items:center;gap:9px;
+  font-size:.8rem;font-weight:700;color:var(--ink-2);
+  border:1px solid var(--line);
+}
+.hv-badge b{color:var(--primary)}
+
+/* ============ STEPS ============ */
+.steps{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;position:relative}
+.step{
+  background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px 24px;position:relative;transition:transform .25s, box-shadow .25s, border-color .25s;
+}
+.step:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#D3DBF8}
+.step-num{
+  font-size:.8rem;font-weight:800;letter-spacing:.1em;
+  color:var(--primary);background:var(--primary-50);
+  display:inline-block;padding:5px 12px;border-radius:100px;margin-bottom:18px;
+}
+.step h3{font-size:1.08rem;margin-bottom:9px}
+.step p{font-size:.92rem;color:var(--muted)}
+.step-ico{
+  width:44px;height:44px;border-radius:13px;display:grid;place-items:center;
+  margin-bottom:16px;background:#fff;box-shadow:var(--shadow-sm);
+}
+.step-ico svg{width:22px;height:22px}
+
+/* ============ ACTIVITY CARDS ============ */
+.activities-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.act-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 20px;text-align:center;
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+}
+.act-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.act-ico{
+  width:56px;height:56px;border-radius:16px;display:grid;place-items:center;font-size:1.6rem;
+  transition:transform .25s;
+}
+.act-card:hover .act-ico{transform:scale(1.08) rotate(-5deg)}
+.act-card h3{font-size:.98rem;font-weight:700}
+.act-card small{font-size:.76rem;color:var(--muted);font-weight:600}
+.act-card .go{
+  font-size:.78rem;font-weight:800;color:var(--primary);
+  opacity:0;transform:translateY(4px);transition:.22s;
+}
+.act-card:hover .go{opacity:1;transform:translateY(0)}
+
+.c1{background:#EEF1FF;color:#3D5AFE}
+.c2{background:#FFF3E9;color:#FF8A3D}
+.c3{background:#E6FAF4;color:#0E9E77}
+.c4{background:#F3EEFF;color:#8B5CF6}
+.c5{background:#FFEEF4;color:#FF6B9D}
+.c6{background:#FFF8E1;color:#C99700}
+.c7{background:#E8F4FF;color:#1E88E5}
+.c8{background:#EEF1FF;color:#3D5AFE}
+.c9{background:#E6FAF4;color:#0E9E77}
+.c10{background:#FFF3E9;color:#FF8A3D}
+
+/* ============ DEMOS ============ */
+.demos{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.demo-tabs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:34px}
+.demo-tab{
+  padding:12px 22px;border-radius:100px;font-size:.9rem;font-weight:700;
+  background:var(--bg);color:var(--ink-2);border:1.5px solid var(--line);
+  transition:.2s;
+}
+.demo-tab:hover{border-color:#C9D3F8;color:var(--primary)}
+.demo-tab.active{background:var(--primary);color:#fff;border-color:var(--primary);box-shadow:0 10px 22px rgba(61,90,254,.28)}
+
+.demo-panel{display:none}
+.demo-panel.active{display:block;animation:fadeUp .35s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+.demo-card{
+  max-width:760px;margin:0 auto;background:var(--bg);
+  border:1px solid var(--line);border-radius:26px;padding:30px;
+  box-shadow:var(--shadow-sm);
+}
+.demo-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+.demo-card-head h3{font-size:1.2rem;margin-bottom:5px}
+.demo-card-head p{font-size:.88rem;color:var(--muted)}
+.demo-reset{
+  font-size:.82rem;font-weight:700;color:var(--primary);
+  background:#fff;border:1.5px solid var(--line);padding:9px 16px;border-radius:100px;
+  transition:.2s;white-space:nowrap;
+}
+.demo-reset:hover{border-color:var(--primary)}
+
+.demo-stage{
+  background:#fff;border-radius:18px;padding:26px 20px;
+  min-height:150px;display:flex;flex-wrap:wrap;gap:12px;
+  align-items:center;justify-content:center;
+  border:1px solid var(--line);margin-bottom:18px;
+}
+.count-item{font-size:2.3rem;line-height:1;animation:pop .4s cubic-bezier(.34,1.56,.64,1) backwards}
+@keyframes pop{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:scale(1)}}
+
+.demo-answers{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.answer-btn{
+  padding:16px;border-radius:14px;background:#fff;border:2px solid var(--line);
+  font-size:1.15rem;font-weight:800;color:var(--ink-2);
+  transition:.18s;
+}
+.answer-btn:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px)}
+.answer-btn.correct{background:var(--green);border-color:var(--green);color:#fff}
+.answer-btn.wrong{background:#FFEEF1;border-color:#FFC2D1;color:#D6335C;animation:shake .4s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+
+.demo-feedback{
+  text-align:center;font-weight:700;font-size:.95rem;color:var(--muted);
+  min-height:26px;transition:color .2s;
+}
+.demo-feedback.ok{color:#0E9E77}
+.demo-feedback.ko{color:#D6335C}
+
+/* Matching demo */
+.match-wrap{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.match-col{display:flex;flex-direction:column;gap:12px}
+.match-col-title{font-size:.74rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:2px}
+.match-item{
+  height:74px;border-radius:16px;background:#fff;border:2px solid var(--line);
+  display:grid;place-items:center;transition:.2s;padding:8px;
+}
+.match-item svg{width:46px;height:46px}
+.match-item:hover{border-color:#C9D3F8;transform:translateY(-2px)}
+.match-item.selected{border-color:var(--primary);box-shadow:0 0 0 4px rgba(61,90,254,.13)}
+.match-item.matched{border-color:var(--green);background:var(--green-50);pointer-events:none;opacity:.72}
+.match-item.wrong{border-color:#FFC2D1;background:#FFEEF1;animation:shake .4s}
+
+/* Order demo */
+.order-stage{
+  display:flex;flex-wrap:wrap;gap:22px;justify-content:center;align-items:flex-end;
+  min-height:150px;
+}
+.order-item{
+  border-radius:50%;background:linear-gradient(150deg,#6D82FF,#3D5AFE);
+  transition:.2s;display:grid;place-items:center;color:#fff;font-weight:800;font-size:.8rem;
+  box-shadow:0 8px 18px rgba(61,90,254,.25);
+}
+.order-item:hover{transform:translateY(-4px)}
+.order-item.done{background:linear-gradient(150deg,#4BD8A6,#20C997);box-shadow:0 8px 18px rgba(32,201,151,.3);cursor:default}
+.order-item.wrong{animation:shake .4s;background:linear-gradient(150deg,#FF8FAE,#FF6B9D)}
+
+.demo-hint{font-size:.84rem;color:var(--muted);text-align:center;margin-top:12px}
+
+/* ============ PUBLISHERS ============ */
+.pub-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center}
+.pub-grid h2{font-size:clamp(1.7rem,3.2vw,2.35rem);margin-bottom:18px}
+.pub-grid > div > p{color:var(--ink-2);font-size:1.03rem;margin-bottom:26px}
+.adv-list{display:grid;gap:14px}
+.adv-item{
+  display:flex;gap:14px;align-items:flex-start;
+  background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;
+  transition:transform .2s, box-shadow .2s;
+}
+.adv-item:hover{transform:translateX(5px);box-shadow:var(--shadow-sm)}
+.adv-check{
+  width:26px;height:26px;flex:0 0 26px;border-radius:50%;
+  background:var(--green-50);display:grid;place-items:center;margin-top:1px;
+}
+.adv-check svg{width:14px;height:14px;color:var(--green)}
+.adv-item p{font-size:.94rem;font-weight:600;color:var(--ink-2)}
+
+/* ============ SOLUTIONS ============ */
+.solutions{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:44px}
+.sol-card{
+  background:var(--bg);border:1px solid var(--line);border-radius:24px;
+  padding:34px 28px;display:flex;flex-direction:column;
+  transition:transform .25s, box-shadow .25s, border-color .25s;
+  position:relative;overflow:hidden;
+}
+.sol-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:var(--primary);transform:scaleX(0);transform-origin:left;transition:transform .35s;
+}
+.sol-card:hover::before{transform:scaleX(1)}
+.sol-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-lg);border-color:transparent;background:#fff}
+.sol-card:nth-child(2)::before{background:var(--accent)}
+.sol-card:nth-child(3)::before{background:var(--green)}
+.sol-ico{
+  width:54px;height:54px;border-radius:16px;display:grid;place-items:center;
+  margin-bottom:20px;background:var(--primary-50);color:var(--primary);
+}
+.sol-card:nth-child(2) .sol-ico{background:var(--accent-50);color:var(--accent)}
+.sol-card:nth-child(3) .sol-ico{background:var(--green-50);color:#0E9E77}
+.sol-ico svg{width:26px;height:26px}
+.sol-card h3{font-size:1.16rem;margin-bottom:12px}
+.sol-card p{font-size:.94rem;color:var(--muted);flex:1;margin-bottom:20px}
+.sol-card ul{display:grid;gap:8px;margin-bottom:22px}
+.sol-card li{font-size:.85rem;color:var(--ink-2);font-weight:600;display:flex;gap:8px;align-items:center}
+.sol-card li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--primary);flex:0 0 5px}
+.sol-card:nth-child(2) li::before{background:var(--accent)}
+.sol-card:nth-child(3) li::before{background:var(--green)}
+
+/* ============ DEVICES ============ */
+.dev-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:40px}
+.dev-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:32px 22px;text-align:center;
+  transition:transform .25s, box-shadow .25s;
+}
+.dev-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.dev-ico{
+  width:60px;height:60px;margin:0 auto 16px;border-radius:18px;
+  display:grid;place-items:center;background:var(--primary-50);color:var(--primary);
+}
+.dev-card:nth-child(2) .dev-ico{background:var(--accent-50);color:var(--accent)}
+.dev-card:nth-child(3) .dev-ico{background:var(--green-50);color:#0E9E77}
+.dev-card:nth-child(4) .dev-ico{background:#F3EEFF;color:var(--purple)}
+.dev-ico svg{width:28px;height:28px}
+.dev-card h3{font-size:1rem;margin-bottom:6px}
+.dev-card small{font-size:.82rem;color:var(--muted)}
+
+.tech-note{
+  background:linear-gradient(120deg,var(--primary) 0%,#5B72FF 55%,#7B8CFF 100%);
+  border-radius:24px;padding:38px 40px;color:#fff;
+  display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;
+  box-shadow:0 24px 56px rgba(61,90,254,.28);
+}
+.tech-note h3{font-size:1.3rem;margin-bottom:8px;color:#fff}
+.tech-note p{font-size:.95rem;opacity:.92;max-width:640px}
+.tech-tags{display:flex;gap:10px;flex-wrap:wrap}
+.tech-tag{
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);
+  padding:9px 18px;border-radius:100px;font-size:.84rem;font-weight:700;white-space:nowrap;
+}
+
+/* ============ LEVELS ============ */
+.levels{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.level-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.level-card{
+  border-radius:24px;padding:38px 30px;position:relative;overflow:hidden;
+  border:1px solid var(--line);background:var(--bg);
+  transition:transform .25s, box-shadow .25s;
+}
+.level-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.level-age{
+  display:inline-block;font-size:.78rem;font-weight:800;
+  padding:6px 14px;border-radius:100px;margin-bottom:18px;
+  background:var(--primary-50);color:var(--primary);
+}
+.level-card h3{font-size:1.5rem;margin-bottom:10px}
+.level-card p{font-size:.94rem;color:var(--muted);margin-bottom:18px}
+.level-tags{display:flex;flex-wrap:wrap;gap:8px}
+.level-tags span{
+  font-size:.78rem;font-weight:700;color:var(--ink-2);
+  background:#fff;border:1px solid var(--line);padding:6px 13px;border-radius:100px;
+}
+.level-card.soon{
+  border-style:dashed;background:transparent;display:grid;place-items:center;text-align:center;
+}
+.level-card.soon .plus{
+  width:52px;height:52px;border-radius:50%;border:2px dashed var(--line);
+  display:grid;place-items:center;margin:0 auto 16px;font-size:1.5rem;color:var(--muted);font-weight:300;
+}
+.level-card.soon h3{font-size:1.1rem;color:var(--ink-2)}
+.level-card.soon p{font-size:.88rem;margin:0}
+
+/* ============ WHY ============ */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.why-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:32px 28px;transition:transform .25s, box-shadow .25s, border-color .25s;
+}
+.why-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#D3DBF8}
+.why-card:last-child{grid-column:span 1}
+.why-ico{
+  width:50px;height:50px;border-radius:15px;display:grid;place-items:center;margin-bottom:18px;
+}
+.why-ico svg{width:24px;height:24px}
+.why-card h3{font-size:1.05rem;margin-bottom:10px}
+.why-card p{font-size:.92rem;color:var(--muted)}
+
+/* ============ CTA ============ */
+.cta-band{
+  background:linear-gradient(135deg,#0E1633 0%,#1B2A5E 55%,#26368A 100%);
+  border-radius:28px;padding:56px 48px;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:space-between;gap:36px;flex-wrap:wrap;
+}
+.cta-band::before{
+  content:'';position:absolute;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(61,90,254,.5),transparent 70%);
+  top:-180px;right:-100px;
+}
+.cta-band::after{
+  content:'';position:absolute;width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,201,60,.25),transparent 70%);
+  bottom:-160px;left:-80px;
+}
+.cta-band > *{position:relative;z-index:1}
+.cta-band h2{color:#fff;font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:12px}
+.cta-band p{color:rgba(255,255,255,.78);font-size:1rem;max-width:560px}
+.cta-band .btn-accent{box-shadow:0 14px 34px rgba(255,138,61,.35)}
+
+/* ============ ABOUT ============ */
+.about{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.about h2{font-size:clamp(1.7rem,3.2vw,2.3rem);margin-bottom:20px}
+.about p{color:var(--ink-2);margin-bottom:18px;font-size:1.02rem}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px}
+.stat{
+  background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:22px;
+}
+.stat b{display:block;font-size:1.6rem;color:var(--primary);letter-spacing:-.03em;margin-bottom:4px}
+.stat span{font-size:.84rem;color:var(--muted);font-weight:600}
+.about-points{display:grid;gap:14px}
+.about-point{
+  display:flex;gap:16px;background:var(--bg);border:1px solid var(--line);
+  border-radius:16px;padding:20px;transition:transform .2s;
+}
+.about-point:hover{transform:translateX(5px)}
+.about-point-ico{
+  width:42px;height:42px;flex:0 0 42px;border-radius:12px;display:grid;place-items:center;
+  background:#fff;box-shadow:var(--shadow-sm);color:var(--primary);
+}
+.about-point-ico svg{width:20px;height:20px}
+.about-point h4{font-size:.98rem;margin-bottom:5px}
+.about-point p{font-size:.88rem;color:var(--muted);margin:0}
+
+/* ============ CONTACT ============ */
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:52px;align-items:start}
+.contact-info h2{font-size:clamp(1.7rem,3.2vw,2.3rem);margin-bottom:16px}
+.contact-info > p{color:var(--muted);margin-bottom:32px;font-size:1.02rem}
+.contact-items{display:grid;gap:16px;margin-bottom:32px}
+.contact-item{
+  display:flex;gap:16px;align-items:flex-start;
+  background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;
+  transition:transform .2s, box-shadow .2s;
+}
+.contact-item:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm)}
+.contact-item-ico{
+  width:44px;height:44px;flex:0 0 44px;border-radius:13px;display:grid;place-items:center;
+  background:var(--primary-50);color:var(--primary);
+}
+.contact-item-ico svg{width:20px;height:20px}
+.contact-item small{display:block;font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.contact-item b{font-size:.98rem;font-weight:700;color:var(--ink);word-break:break-word}
+
+.form-card{
+  background:#fff;border:1px solid var(--line);border-radius:26px;padding:38px;
+  box-shadow:var(--shadow-sm);
+}
+.form-card h3{font-size:1.2rem;margin-bottom:6px}
+.form-card > p{font-size:.9rem;color:var(--muted);margin-bottom:26px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{margin-bottom:18px;display:flex;flex-direction:column;gap:7px}
+.field label{font-size:.83rem;font-weight:700;color:var(--ink-2)}
+.field label .req{color:var(--accent)}
+.field input,.field select,.field textarea{
+  font-family:inherit;font-size:.93rem;color:var(--ink);
+  padding:13px 16px;border-radius:12px;border:1.5px solid var(--line);
+  background:var(--bg);transition:border-color .18s, background .18s, box-shadow .18s;
+  width:100%;
+}
+.field textarea{resize:vertical;min-height:118px}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--primary);background:#fff;
+  box-shadow:0 0 0 4px rgba(61,90,254,.1);
+}
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236B7599' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:42px}
+.form-consent{display:flex;gap:11px;align-items:flex-start;font-size:.83rem;color:var(--muted);margin-bottom:22px}
+.form-consent input{width:18px;height:18px;flex:0 0 18px;margin-top:2px;accent-color:var(--primary)}
+.form-note{font-size:.78rem;color:var(--muted);margin-top:14px;text-align:center}
+.form-success{
+  display:none;background:var(--green-50);border:1px solid #B9EEDC;color:#0E7C5E;
+  border-radius:14px;padding:16px 18px;font-size:.9rem;font-weight:600;margin-bottom:20px;
+}
+.form-success.show{display:block;animation:fadeUp .3s ease}
+
+/* ============ FOOTER ============ */
+.footer{background:#0E1633;color:rgba(255,255,255,.68);padding:64px 0 28px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.footer .logo{color:#fff;margin-bottom:16px}
+.footer .logo span b{color:#7B8CFF}
+.footer-about{font-size:.9rem;max-width:320px;line-height:1.7}
+.footer h4{color:#fff;font-size:.86rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
+.footer ul{display:grid;gap:11px}
+.footer a{font-size:.9rem;transition:color .18s}
+.footer a:hover{color:#fff}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);padding-top:26px;
+  display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;
+  font-size:.83rem;
+}
+.footer-bottom-links{display:flex;gap:22px;flex-wrap:wrap}
+
+/* ============ REVEAL ============ */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:none}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1080px){
+  .activities-grid{grid-template-columns:repeat(3,1fr)}
+  .hero-visual{height:400px;transform:scale(.92);transform-origin:right center}
+}
+
+@media (max-width:920px){
+  section{padding:70px 0}
+  .nav-links{
+    position:fixed;top:74px;left:0;right:0;
+    background:#fff;flex-direction:column;align-items:stretch;gap:2px;
+    padding:16px 20px 26px;border-bottom:1px solid var(--line);
+    box-shadow:0 18px 34px rgba(14,22,51,.1);
+    transform:translateY(-130%);transition:transform .32s cubic-bezier(.22,1,.36,1);
+    max-height:calc(100vh - 74px);overflow-y:auto;
+  }
+  .nav-links.open{transform:translateY(0)}
+  .nav-links a{padding:14px 16px;border-radius:12px;font-size:1rem}
+  .burger{display:grid}
+  .nav-cta .btn{display:none}
+
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .hero{padding:46px 0 70px}
+  .hero-visual{height:400px;max-width:520px;margin:0 auto;transform:none;width:100%}
+  .hero p.lead{max-width:none}
+
+  .steps-grid{grid-template-columns:repeat(2,1fr)}
+  .pub-grid{grid-template-columns:1fr;gap:40px}
+  .sol-grid{grid-template-columns:1fr;gap:18px}
+  .dev-grid{grid-template-columns:repeat(2,1fr)}
+  .level-grid{grid-template-columns:1fr;gap:18px}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .contact-grid{grid-template-columns:1fr;gap:40px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:34px}
+  .tech-note{padding:32px 28px}
+  .cta-band{padding:44px 32px}
+}
+
+@media (max-width:640px){
+  .container{padding:0 18px}
+  section{padding:58px 0}
+  .section-head{margin-bottom:38px}
+
+  .hero-visual{height:auto;display:flex;flex-direction:column;gap:18px;align-items:center}
+  .hv-book,.hv-tablet{position:relative;left:auto;right:auto;top:auto;width:100%;max-width:340px;transform:none}
+  .hv-arrow,.hv-badge{display:none}
+  .hv-tablet{order:-1}
+
+  .activities-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .act-card{padding:20px 14px}
+  .act-ico{width:48px;height:48px;font-size:1.35rem}
+
+  .steps-grid{grid-template-columns:1fr}
+  .dev-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .form-card{padding:26px 20px}
+  .demo-card{padding:22px 18px}
+  .demo-answers{grid-template-columns:repeat(2,1fr)}
+  .match-wrap{gap:14px}
+  .match-item{height:62px}
+  .match-item svg{width:38px;height:38px}
+  .footer-grid{grid-template-columns:1fr;gap:30px}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+  .cta-band{padding:36px 24px;border-radius:22px}
+  .cta-band .btn{width:100%}
+  .about-stats{grid-template-columns:1fr}
+  .tech-note .tech-tags{width:100%}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header" id="header">
+  <div class="container">
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#accueil" class="logo" aria-label="Ludibook - accueil">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10a3 3 0 0 1 3 3v12a2.5 2.5 0 0 0-2.5-2.5H4V5.5Z" fill="#fff"/>
+            <path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H14a3 3 0 0 0-3 3v12a2.5 2.5 0 0 1 2.5-2.5H20V5.5Z" fill="#fff" opacity=".72"/>
+            <circle cx="17" cy="8" r="2.6" fill="#FFC93C"/>
+          </svg>
+        </span>
+        <span>Ludi<b>book</b></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#activites">Nos activités</a></li>
+        <li><a href="#editeurs">Pour les éditeurs</a></li>
+        <li><a href="#demonstrations">Démonstrations</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-primary">Demander une démonstration</a>
+        <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="accueil">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="eyebrow">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2 15.1 8.3 22 9.3l-5 4.9 1.2 6.9L12 17.8 5.8 21.1 7 14.2 2 9.3l6.9-1z"/></svg>
+          Studio marocain · Édition scolaire
+        </span>
+
+        <h1>Donnez une nouvelle dimension à vos <em>livres scolaires</em></h1>
+
+        <p class="lead">
+          Ludibook transforme les exercices classiques en activités éducatives interactives,
+          accessibles sur ordinateur, tablette et tableau interactif.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#activites" class="btn btn-primary btn-lg">Découvrir nos activités</a>
+          <a href="#contact" class="btn btn-outline btn-lg">Demander une démonstration</a>
+        </div>
+
+        <div class="hero-trust">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Contenus créés sur mesure
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Compatible HTML5
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Intégration par QR code
+          </span>
+        </div>
+      </div>
+
+      <!-- Illustration -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hv-book">
+          <div class="hv-book-top">
+            <span class="hv-dot"></span><span class="hv-dot"></span><span class="hv-dot"></span>
+          </div>
+          <h4>Manuel scolaire · Page 42</h4>
+          <div class="hv-line w1"></div>
+          <div class="hv-line w2"></div>
+          <div class="hv-line w3"></div>
+          <div class="hv-line w4"></div>
+          <div class="hv-exercise">
+            <small>Exercice 3<br>Scannez pour l'activité</small>
+            <svg class="hv-qr" viewBox="0 0 100 100" role="img">
+              <rect width="100" height="100" fill="#fff"/>
+              <rect x="6" y="6" width="26" height="26" rx="5" fill="none" stroke="#0E1633" stroke-width="8"/>
+              <rect x="15" y="15" width="8" height="8" fill="#0E1633"/>
+              <rect x="68" y="6" width="26" height="26" rx="5" fill="none" stroke="#0E1633" stroke-width="8"/>
+              <rect x="77" y="15" width="8" height="8" fill="#0E1633"/>
+              <rect x="6" y="68" width="26" height="26" rx="5" fill="none" stroke="#0E1633" stroke-width="8"/>
+              <rect x="15" y="77" width="8" height="8" fill="#0E1633"/>
+              <rect x="40" y="8" width="8" height="8" fill="#0E1633"/>
+              <rect x="52" y="8" width="8" height="8" fill="#0E1633"/>
+              <rect x="40" y="20" width="8" height="8" fill="#0E1633"/>
+              <rect x="52" y="26" width="8" height="8" fill="#0E1633"/>
+              <rect x="40" y="38" width="8" height="8" fill="#0E1633"/>
+              <rect x="52" y="38" width="8" height="8" fill="#0E1633"/>
+              <rect x="64" y="40" width="8" height="8" fill="#0E1633"/>
+              <rect x="78" y="44" width="8" height="8" fill="#0E1633"/>
+              <rect x="8" y="44" width="8" height="8" fill="#0E1633"/>
+              <rect x="20" y="44" width="8" height="8" fill="#0E1633"/>
+              <rect x="8" y="56" width="8" height="8" fill="#0E1633"/>
+              <rect x="26" y="56" width="8" height="8" fill="#0E1633"/>
+              <rect x="44" y="58" width="8" height="8" fill="#0E1633"/>
+              <rect x="58" y="58" width="8" height="8" fill="#0E1633"/>
+              <rect x="72" y="60" width="8" height="8" fill="#0E1633"/>
+              <rect x="44" y="74" width="8" height="8" fill="#0E1633"/>
+              <rect x="60" y="74" width="8" height="8" fill="#0E1633"/>
+              <rect x="76" y="74" width="8" height="8" fill="#0E1633"/>
+              <rect x="44" y="86" width="8" height="8" fill="#0E1633"/>
+              <rect x="64" y="86" width="8" height="8" fill="#0E1633"/>
+              <rect x="80" y="86" width="8" height="8" fill="#0E1633"/>
+            </svg>
+          </div>
+        </div>
+
+        <svg class="hv-arrow" viewBox="0 0 110 80" fill="none" aria-hidden="true">
+          <path d="M4 66C22 66 34 14 70 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="7 7"/>
+          <path d="M62 6l10 6-8 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        <div class="hv-tablet">
+          <div class="hv-screen">
+            <div class="hv-screen-head">
+              <small>Activité 3 — Compter</small>
+              <span class="hv-pill">Interactif</span>
+            </div>
+            <div class="hv-items">
+              <span class="hv-item">🍎</span>
+              <span class="hv-item">🍎</span>
+              <span class="hv-item">🍎</span>
+              <span class="hv-item">🍎</span>
+              <span class="hv-item">🍎</span>
+            </div>
+            <div class="hv-answers">
+              <span>3</span><span>4</span><span class="ok">5</span><span>6</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hv-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3D5AFE" stroke-width="2.4" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3h-3zM20 20h1M17 20h-3v1"/></svg>
+          Livre papier → <b>QR Code</b> → Activité
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMMENT ÇA FONCTIONNE ================= -->
+<section class="steps" id="fonctionnement">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Le principe</span>
+      <h2>Comment ça fonctionne ?</h2>
+      <p>Quatre étapes simples, du manuel papier à l'activité interactive.</p>
+    </div>
+
+    <div class="steps-grid">
+      <article class="step reveal">
+        <div class="step-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#3D5AFE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H11a3 3 0 0 1 3 3v14a2.5 2.5 0 0 0-2.5-2.5H4V4.5Z"/><path d="M20 4.5A1.5 1.5 0 0 0 18.5 3H13a3 3 0 0 0-3 3v14a2.5 2.5 0 0 1 2.5-2.5H20V4.5Z"/></svg>
+        </div>
+        <span class="step-num">01</span>
+        <h3>Votre livre</h3>
+        <p>La maison d'édition dispose déjà de ses contenus pédagogiques.</p>
+      </article>
+
+      <article class="step reveal">
+        <div class="step-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+        </div>
+        <span class="step-num">02</span>
+        <h3>Création interactive</h3>
+        <p>Ludibook transforme les exercices sélectionnés en activités numériques interactives.</p>
+      </article>
+
+      <article class="step reveal">
+        <div class="step-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#20C997" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3h-3zM14 20h3M20 14v3M20 20h1"/></svg>
+        </div>
+        <span class="step-num">03</span>
+        <h3>QR Code</h3>
+        <p>Un QR code peut être intégré directement dans le livre.</p>
+      </article>
+
+      <article class="step reveal">
+        <div class="step-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5s1.3 1.8 3.5 1.8 3.5-1.8 3.5-1.8"/><path d="M9 9.5h.01M15 9.5h.01"/></svg>
+        </div>
+        <span class="step-num">04</span>
+        <h3>L'enfant joue et apprend</h3>
+        <p>L'enfant accède à l'activité sur ordinateur, tablette ou tableau interactif.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NOS ACTIVITÉS ================= -->
+<section id="activites">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Nos activités</span>
+      <h2>Découvrez nos activités</h2>
+      <p>Des activités éducatives interactives conçues pour compléter les manuels, de la maternelle au primaire.</p>
+    </div>
+
+    <div class="activities-grid">
+      <a href="#demonstrations" class="act-card reveal">
+        <span class="act-ico c1">➗</span>
+        <h3>Mathématiques</h3>
+        <small>Nombres, calcul, mesures</small>
+        <span class="go">Voir des exemples →</span>
+      </a>
+      <a href="#demonstrations" class="act-card reveal">
+        <span class="act-ico c2">📖</span>
+        <h3>Français</h3>
+        <small>Lecture, vocabulaire</small>
+        <span class="go">Voir des exemples →</span>
+      </a>
+      <a href="#demonstrations" class="act-card reveal">
+        <span class="act-ico c3">✍️</span>
+        <h3>Arabe</h3>
+        <small>Lettres, mots, phrases</small>
+        <span class="go">Voir des exemples →</span>
+      </a>
+      <a href="#demonstrations" class="act-card reveal">
+        <span class="act-ico c4">🧩</span>
+        <h3>Logique</h3>
+        <small>Suites, déduction</small>
+        <span class="go">Voir des exemples →</span>
+      </a>
+      <a href="#demonstrations" class="act-card reveal">
+        <span class="act-ico c5">🔷</span>
+        <h3>Formes et couleurs</h3>
+        <small>Reconnaissance visuelle</small>
+        <span class="go">Voir des exemples →</span>
+      </a>
+      <a href="#demonstrations" class="act-card reveal">
+        <span class="act-ico c6">📊</span>
+        <h3>Classement</h3>
+        <small>Ordre, catégories</small>
+        <span class="go">Voir des exemples →</span>
+      </a>
+      <a href="#demonstrations" class="act-card reveal">
+        <span class="act-ico c7">🔗</span>
+        <h3>Association</h3>
+        <small>Paires et liens</small>
+        <span class="go">Voir des exemples →</span>
+      </a>
+      <a href="#demonstrations" class="act-card reveal">
+        <span class="act-ico c8">🧠</span>
+        <h3>Mémoire</h3>
+        <small>Observation, rappel</small>
+        <span class="go">Voir des exemples →</span>
+      </a>
+      <a href="#demonstrations" class="act-card reveal">
+        <span class="act-ico c9">🔎</span>
+        <h3>Découverte</h3>
+        <small>Monde, sciences, nature</small>
+        <span class="go">Voir des exemples →</span>
+      </a>
+      <a href="#demonstrations" class="act-card reveal">
+        <span class="act-ico c10">🧸</span>
+        <h3>Activités pour la maternelle</h3>
+        <small>4–6 ans</small>
+        <span class="go">Voir des exemples →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DÉMONSTRATIONS ================= -->
+<section class="demos" id="demonstrations">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Démonstrations</span>
+      <h2>Testez une activité</h2>
+      <p>Trois exemples réels d'activités Ludibook. Elles fonctionnent directement dans votre navigateur, sans installation.</p>
+    </div>
+
+    <div class="demo-tabs reveal" role="tablist" aria-label="Choisir une activité de démonstration">
+      <button class="demo-tab active" data-demo="comptage" role="tab" aria-selected="true" aria-controls="panel-comptage" id="tab-comptage">Compter les objets</button>
+      <button class="demo-tab" data-demo="formes" role="tab" aria-selected="false" aria-controls="panel-formes" id="tab-formes">Associer les formes</button>
+      <button class="demo-tab" data-demo="ordre" role="tab" aria-selected="false" aria-controls="panel-ordre" id="tab-ordre">Classer du plus petit au plus grand</button>
+    </div>
+
+    <!-- Démo 1 : Compter -->
+    <div class="demo-panel active" id="panel-comptage" role="tabpanel" aria-labelledby="tab-comptage">
+      <div class="demo-card">
+        <div class="demo-card-head">
+          <div>
+            <h3>Compter les objets</h3>
+            <p>Niveau maternelle · Mathématiques — Dénombrement de 3 à 8 éléments.</p>
+          </div>
+          <button class="demo-reset" data-reset="comptage">Nouvelle activité ↻</button>
+        </div>
+        <div class="demo-stage" id="countStage"></div>
+        <div class="demo-answers" id="countAnswers"></div>
+        <p class="demo-feedback" id="countFeedback" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <!-- Démo 2 : Formes -->
+    <div class="demo-panel" id="panel-formes" role="tabpanel" aria-labelledby="tab-formes">
+      <div class="demo-card">
+        <div class="demo-card-head">
+          <div>
+            <h3>Associer les formes</h3>
+            <p>Niveau maternelle · Formes et couleurs — Reliez chaque forme à son identique.</p>
+          </div>
+          <button class="demo-reset" data-reset="formes">Recommencer ↻</button>
+        </div>
+        <div class="match-wrap">
+          <div class="match-col">
+            <span class="match-col-title">Modèles</span>
+            <div id="matchLeft" class="match-col"></div>
+          </div>
+          <div class="match-col">
+            <span class="match-col-title">À associer</span>
+            <div id="matchRight" class="match-col"></div>
+          </div>
+        </div>
+        <p class="demo-feedback" id="matchFeedback" aria-live="polite" style="margin-top:18px">Sélectionnez une forme à gauche, puis son identique à droite.</p>
+      </div>
+    </div>
+
+    <!-- Démo 3 : Ordre -->
+    <div class="demo-panel" id="panel-ordre" role="tabpanel" aria-labelledby="tab-ordre">
+      <div class="demo-card">
+        <div class="demo-card-head">
+          <div>
+            <h3>Classer du plus petit au plus grand</h3>
+            <p>Niveau maternelle · Classement — Cliquez sur les cercles dans le bon ordre.</p>
+          </div>
+          <button class="demo-reset" data-reset="ordre">Recommencer ↻</button>
+        </div>
+        <div class="demo-stage order-stage" id="orderStage"></div>
+        <p class="demo-feedback" id="orderFeedback" aria-live="polite">Commencez par le plus petit.</p>
+      </div>
+    </div>
+
+    <p class="demo-hint reveal" style="margin-top:34px">
+      Ces exemples sont donnés à titre indicatif. Chaque activité est conçue selon vos contenus pédagogiques.
+    </p>
+  </div>
+</section>
+
+<!-- ================= POUR LES ÉDITEURS ================= -->
+<section id="editeurs">
+  <div class="container">
+    <div class="pub-grid">
+      <div class="reveal">
+        <span class="eyebrow">Pour les éditeurs</span>
+        <h2>Un complément numérique pour vos livres</h2>
+        <p>
+          Vos manuels deviennent encore plus riches grâce à des activités numériques conçues
+          pour prolonger l'apprentissage au-delà de la page papier.
+        </p>
+        <a href="#contact" class="btn btn-primary">Parler de votre projet</a>
+      </div>
+
+      <div class="adv-list reveal">
+        <div class="adv-item">
+          <span class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <p>Valoriser les manuels scolaires</p>
+        </div>
+        <div class="adv-item">
+          <span class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <p>Proposer une expérience numérique complémentaire</p>
+        </div>
+        <div class="adv-item">
+          <span class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <p>Rendre certains exercices plus interactifs</p>
+        </div>
+        <div class="adv-item">
+          <span class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <p>Faciliter l'apprentissage par la pratique</p>
+        </div>
+        <div class="adv-item">
+          <span class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <p>Proposer des activités accessibles sur plusieurs appareils</p>
+        </div>
+        <div class="adv-item">
+          <span class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <p>Intégrer des QR codes directement dans les livres</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NOS SOLUTIONS ================= -->
+<section class="solutions">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Nos solutions</span>
+      <h2>Trois façons de travailler avec nous</h2>
+      <p>Selon votre catalogue, vos priorités et le rythme de vos publications.</p>
+    </div>
+
+    <div class="sol-grid">
+      <article class="sol-card reveal">
+        <div class="sol-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9l-3.8 3.8Z"/></svg>
+        </div>
+        <h3>Création sur mesure</h3>
+        <p>Nous transformons vos exercices et contenus pédagogiques en activités interactives.</p>
+        <ul>
+          <li>À partir de vos pages existantes</li>
+          <li>Respect de votre charte éditoriale</li>
+          <li>Validation avant intégration</li>
+        </ul>
+      </article>
+
+      <article class="sol-card reveal">
+        <div class="sol-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10a3 3 0 0 1 3 3v12a2.5 2.5 0 0 0-2.5-2.5H4V5.5Z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H14a3 3 0 0 0-3 3v12a2.5 2.5 0 0 1 2.5-2.5H20V5.5Z"/></svg>
+        </div>
+        <h3>Catalogue Ludibook</h3>
+        <p>Accédez à une bibliothèque d'activités éducatives déjà disponibles.</p>
+        <ul>
+          <li>Activités prêtes à intégrer</li>
+          <li>Maternelle et primaire</li>
+          <li>Plusieurs matières couvertes</li>
+        </ul>
+      </article>
+
+      <article class="sol-card reveal">
+        <div class="sol-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/><path d="M12 11v6M9 14h6"/></svg>
+        </div>
+        <h3>Projet éditorial complet</h3>
+        <p>Création d'un ensemble d'activités interactives pour accompagner un manuel ou une collection.</p>
+        <ul>
+          <li>Périmètre défini avec vous</li>
+          <li>Ensemble cohérent sur toute la collection</li>
+          <li>Accompagnement de A à Z</li>
+        </ul>
+      </article>
+    </div>
+
+    <div style="text-align:center" class="reveal">
+      <a href="#contact" class="btn btn-primary btn-lg">Parler de votre projet</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPATIBLE ================= -->
+<section id="compatibilite">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Compatibilité</span>
+      <h2>Compatible avec vos équipements</h2>
+      <p>Les activités Ludibook fonctionnent directement dans le navigateur, sans installation obligatoire.</p>
+    </div>
+
+    <div class="dev-grid">
+      <div class="dev-card reveal">
+        <div class="dev-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3>Ordinateur</h3>
+        <small>En classe ou à la maison</small>
+      </div>
+
+      <div class="dev-card reveal">
+        <div class="dev-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+        </div>
+        <h3>Tablette</h3>
+        <small>Idéal pour les jeunes enfants</small>
+      </div>
+
+      <div class="dev-card reveal">
+        <div class="dev-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+        </div>
+        <h3>Smartphone</h3>
+        <small>Accès par QR code</small>
+      </div>
+
+      <div class="dev-card reveal">
+        <div class="dev-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="13" rx="1.5"/><path d="M12 16v5M8 21h8"/></svg>
+        </div>
+        <h3>Tableau interactif</h3>
+        <small>Pour un usage collectif</small>
+      </div>
+    </div>
+
+    <div class="tech-note reveal">
+      <div>
+        <h3>Technologie HTML5, accessible partout</h3>
+        <p>Les activités sont développées en HTML5 et s'exécutent dans un navigateur moderne. Aucune installation logicielle n'est nécessaire pour l'élève comme pour l'enseignant.</p>
+      </div>
+      <div class="tech-tags">
+        <span class="tech-tag">HTML5</span>
+        <span class="tech-tag">Navigateur web</span>
+        <span class="tech-tag">Sans installation</span>
+        <span class="tech-tag">Multi-écrans</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NIVEAUX ================= -->
+<section class="levels" id="niveaux">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Niveaux</span>
+      <h2>Pour quels niveaux ?</h2>
+      <p>Nos activités couvrent aujourd'hui la maternelle et le primaire. D'autres niveaux sont prévus.</p>
+    </div>
+
+    <div class="level-grid">
+      <article class="level-card reveal">
+        <span class="level-age">4 – 6 ans</span>
+        <h3>Maternelle</h3>
+        <p>Activités courtes et visuelles : formes, couleurs, dénombrement, logique simple, discrimination visuelle.</p>
+        <div class="level-tags">
+          <span>Formes et couleurs</span>
+          <span>Compter</span>
+          <span>Association</span>
+          <span>Mémoire</span>
+        </div>
+      </article>
+
+      <article class="level-card reveal">
+        <span class="level-age">6 – 12 ans</span>
+        <h3>Primaire</h3>
+        <p>Activités liées aux matières du programme : mathématiques, français, arabe, classement et logique.</p>
+        <div class="level-tags">
+          <span>Mathématiques</span>
+          <span>Français</span>
+          <span>Arabe</span>
+          <span>Classement</span>
+        </div>
+      </article>
+
+      <article class="level-card soon reveal">
+        <div>
+          <div class="plus">+</div>
+          <h3>D'autres niveaux à venir</h3>
+          <p>Notre catalogue s'enrichit progressivement selon les besoins du secteur éducatif marocain.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= POURQUOI LUDIBOOK ================= -->
+<section id="pourquoi">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Pourquoi Ludibook</span>
+      <h2>Un studio, pas un logiciel</h2>
+      <p>Ludibook ne vend pas d'outil de création d'exercices. Nous concevons et produisons directement les contenus éducatifs interactifs.</p>
+    </div>
+
+    <div class="why-grid">
+      <article class="why-card reveal">
+        <div class="why-ico" style="background:var(--primary-50);color:var(--primary)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="M3 14l9 5 9-5"/></svg>
+        </div>
+        <h3>Création pédagogique</h3>
+        <p>Des activités pensées pour favoriser l'apprentissage par l'interaction.</p>
+      </article>
+
+      <article class="why-card reveal">
+        <div class="why-ico" style="background:var(--accent-50);color:var(--accent)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5s1.3 1.8 3.5 1.8 3.5-1.8 3.5-1.8M9 9.5h.01M15 9.5h.01"/></svg>
+        </div>
+        <h3>Expérience ludique</h3>
+        <p>Les exercices deviennent plus dynamiques et engageants.</p>
+      </article>
+
+      <article class="why-card reveal">
+        <div class="why-ico" style="background:var(--green-50);color:#0E9E77">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="4.5"/></svg>
+        </div>
+        <h3>Adaptation aux contenus</h3>
+        <p>Les activités peuvent être conçues selon les besoins de chaque projet éditorial.</p>
+      </article>
+
+      <article class="why-card reveal">
+        <div class="why-ico" style="background:#F3EEFF;color:var(--purple)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="11" rx="2"/><rect x="17" y="8" width="5" height="12" rx="1.5"/><path d="M6 19h6"/></svg>
+        </div>
+        <h3>Technologie accessible</h3>
+        <p>Les activités HTML5 peuvent fonctionner sur différents appareils.</p>
+      </article>
+
+      <article class="why-card reveal">
+        <div class="why-ico" style="background:#FFEEF4;color:#D6335C">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.6 5.6 6 .7-4.4 4.2 1.2 6.1L12 16.7 6.6 19.6l1.2-6.1L3.4 9.3l6-.7L12 3Z"/></svg>
+        </div>
+        <h3>Solution marocaine</h3>
+        <p>Ludibook est pensé pour répondre aux besoins du secteur éducatif et éditorial marocain.</p>
+      </article>
+
+      <article class="why-card reveal">
+        <div class="why-ico" style="background:var(--primary-50);color:var(--primary)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10a3 3 0 0 1 3 3v12a2.5 2.5 0 0 0-2.5-2.5H4V5.5Z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H14a3 3 0 0 0-3 3v12a2.5 2.5 0 0 1 2.5-2.5H20V5.5Z"/></svg>
+        </div>
+        <h3>Intégration au livre</h3>
+        <p>Le QR code relie directement la page papier à l'activité numérique correspondante.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ÉDITEURS ================= -->
+<section id="cta-editeurs" style="padding-top:20px">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2>Vous êtes une maison d'édition ?</h2>
+        <p>Transformons ensemble vos contenus pédagogiques en expériences interactives.</p>
+      </div>
+      <a href="#contact" class="btn btn-accent btn-lg">Demander une démonstration</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= À PROPOS ================= -->
+<section class="about" id="apropos">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="eyebrow">À propos</span>
+        <h2>Ludibook, studio de contenus éducatifs interactifs</h2>
+        <p>
+          Ludibook est une entreprise marocaine spécialisée dans la création de contenus éducatifs
+          numériques interactifs. Nous concevons des exercices et des jeux pédagogiques destinés
+          aux enfants, en complément des livres et manuels scolaires.
+        </p>
+        <p>
+          Nous travaillons avec les maisons d'édition, les éditeurs de manuels scolaires, les écoles
+          privées et les professionnels de l'éducation. Notre rôle n'est pas de fournir un outil de
+          création : nous produisons nous-mêmes les activités, à partir de vos contenus et de vos
+          objectifs pédagogiques.
+        </p>
+
+        <div class="about-stats">
+          <div class="stat">
+            <b>Maternelle &amp; Primaire</b>
+            <span>Niveaux couverts aujourd'hui</span>
+          </div>
+          <div class="stat">
+            <b>HTML5</b>
+            <span>Fonctionne sur navigateur, sans installation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-points reveal">
+        <div class="about-point">
+          <span class="about-point-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="M3 14l9 5 9-5"/></svg>
+          </span>
+          <div>
+            <h4>Une expertise pédagogique</h4>
+            <p>Chaque activité est construite autour d'un objectif d'apprentissage précis.</p>
+          </div>
+        </div>
+
+        <div class="about-point">
+          <span class="about-point-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9l-3.8 3.8Z"/></svg>
+          </span>
+          <div>
+            <h4>Une production maîtrisée</h4>
+            <p>Conception, développement et intégration : un seul interlocuteur pour votre projet.</p>
+          </div>
+        </div>
+
+        <div class="about-point">
+          <span class="about-point-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.6 5.6 6 .7-4.4 4.2 1.2 6.1L12 16.7 6.6 19.6l1.2-6.1L3.4 9.3l6-.7L12 3Z"/></svg>
+          </span>
+          <div>
+            <h4>Une approche adaptée au Maroc</h4>
+            <p>Des contenus alignés sur les réalités du secteur éducatif et éditorial marocain.</p>
+          </div>
+        </div>
+
+        <div class="about-point">
+          <span class="about-point-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </span>
+          <div>
+            <h4>Une évolution progressive</h4>
+            <p>L'architecture de nos contenus est pensée pour accompagner vos futurs projets.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <span class="eyebrow">Contact</span>
+        <h2>Parlons de votre projet</h2>
+        <p>
+          Décrivez-nous votre manuel, votre collection ou votre besoin. Nous revenons vers vous
+          avec une proposition adaptée.
+        </p>
+
+        <div class="contact-items">
+          <div class="contact-item">
+            <span class="contact-item-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+            </span>
+            <div>
+              <small>Email</small>
+              <b>contact@ludibook.ma</b>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-item-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L15 13l5 2v3a2 2 0 0 1-2.2 2A16 16 0 0 1 3 5.2 2 2 0 0 1 5 3Z"/></svg>
+            </span>
+            <div>
+              <small>Téléphone</small>
+              <b>+212 522 00 00 00</b>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-item-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            </span>
+            <div>
+              <small>Adresse</small>
+              <b>Casablanca, Maroc</b>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-item-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </span>
+            <div>
+              <small>Horaires</small>
+              <b>Lundi – Vendredi · 9h00 – 18h00</b>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card reveal">
+        <h3>Demander une démonstration</h3>
+        <p>Remplissez le formulaire, nous vous répondons sous 48 heures ouvrées.</p>
+
+        <div class="form-success" id="formSuccess" role="status">
+          Merci. Votre demande a bien été enregistrée. L'équipe Ludibook vous contactera prochainement.
+        </div>
+
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="nom">Nom <span class="req">*</span></label>
+              <input type="text" id="nom" name="nom" required autocomplete="name" placeholder="Votre nom complet">
+            </div>
+            <div class="field">
+              <label for="societe">Société / maison d'édition <span class="req">*</span></label>
+              <input type="text" id="societe" name="societe" required autocomplete="organization" placeholder="Nom de votre structure">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="fonction">Fonction</label>
+              <input type="text" id="fonction" name="fonction" autocomplete="organization-title" placeholder="Ex. Directeur éditorial">
+            </div>
+            <div class="field">
+              <label for="email">Email professionnel <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="nom@societe.ma">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="telephone">Téléphone</label>
+              <input type="tel" id="telephone" name="telephone" autocomplete="tel" placeholder="+212 6 00 00 00 00">
+            </div>
+            <div class="field">
+              <label for="type">Type de projet <span class="req">*</span></label>
+              <select id="type" name="type" required>
+                <option value="" selected disabled>Sélectionnez…</option>
+                <option>Création sur mesure</option>
+                <option>Catalogue Ludibook</option>
+                <option>Projet éditorial complet</option>
+                <option>Démonstration / information</option>
+                <option>Autre</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Message <span class="req">*</span></label>
+            <textarea id="message" name="message" required placeholder="Décrivez brièvement votre manuel, votre collection ou votre besoin."></textarea>
+          </div>
+
+          <label class="form-consent">
+            <input type="checkbox" id="consent" name="consent" required>
+            <span>J'accepte que Ludibook utilise ces informations pour répondre à ma demande.</span>
+          </label>
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Envoyer ma demande</button>
+          <p class="form-note">Les champs marqués d'un <span style="color:var(--accent)">*</span> sont obligatoires.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="#accueil" class="logo">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10a3 3 0 0 1 3 3v12a2.5 2.5 0 0 0-2.5-2.5H4V5.5Z" fill="#fff"/>
+              <path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H14a3 3 0 0 0-3 3v12a2.5 2.5 0 0 1 2.5-2.5H20V5.5Z" fill="#fff" opacity=".72"/>
+              <circle cx="17" cy="8" r="2.6" fill="#FFC93C"/>
+            </svg>
+          </span>
+          <span>Ludi<b>book</b></span>
+        </a>
+        <p class="footer-about">
+          Studio marocain spécialisé dans la création d'exercices et de jeux éducatifs interactifs
+          pour compléter les livres et manuels scolaires.
+        </p>
+      </div>
+
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#activites">Nos activités</a></li>
+          <li><a href="#editeurs">Pour les éditeurs</a></li>
+          <li><a href="#demonstrations">Démonstrations</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Entreprise</h4>
+        <ul>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#pourquoi">Pourquoi Ludibook</a></li>
+          <li><a href="#compatibilite">Compatibilité</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@ludibook.ma">contact@ludibook.ma</a></li>
+          <li><a href="tel:+212522000000">+212 522 00 00 00</a></li>
+          <li>Casablanca, Maroc</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year">2025</span> Ludibook. Tous droits réservés.</span>
+      <div class="footer-bottom-links">
+        <a href="#contact">Mentions légales</a>
+        <a href="#contact">Politique de confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ---------- Année ---------- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- Header sticky ---------- */
+  var header = document.getElementById('header');
+  var onScroll = function(){
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---------- Menu mobile ---------- */
+  var burger = document.getElementById('burger');
+  var navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    var open = navLinks.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+  });
+  navLinks.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      navLinks.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+    });
+  });
+
+  /* ---------- Reveal au scroll ---------- */
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    reveals.forEach(function(el, i){
+      el.style.transitionDelay = (i % 5) * 60 + 'ms';
+      io.observe(el);
+    });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('visible'); });
+  }
+
+  /* =========================================================
+     DÉMONSTRATIONS INTERACTIVES
+     ========================================================= */
+
+  /* ---------- Onglets ---------- */
+  var tabs = document.querySelectorAll('.demo-tab');
+  var panels = document.querySelectorAll('.demo-panel');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      tabs.forEach(function(t){ t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+      panels.forEach(function(p){ p.classList.remove('active'); });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected','true');
+      document.getElementById('panel-' + tab.dataset.demo).classList.add('active');
+    });
+  });
+
+  /* =========================================================
+     DÉMO 1 — COMPTER LES OBJETS
+     ========================================================= */
+  var EMOJIS = ['🍎','⭐','🐟','🌸','🎈','🦋','🍊','🐤','🌼','🚗'];
+  var countStage = document.getElementById('countStage');
+  var countAnswers = document.getElementById('countAnswers');
+  var countFeedback = document.getElementById('countFeedback');
+
+  function buildComptage(){
+    var n = Math.floor(Math.random() * 6) + 3;      // 3 → 8
+    var emoji = EMOJIS[Math.floor(Math.random() * EMOJIS.length)];
+
+    countStage.innerHTML = '';
+    for (var i = 0; i < n; i++) {
+      var s = document.createElement('span');
+      s.className = 'count-item';
+      s.textContent = emoji;
+      s.style.animationDelay = (i * 55) + 'ms';
+      countStage.appendChild(s);
+    }
+
+    // Options de réponse
+    var opts = [n];
+    while (opts.length < 4) {
+      var cand = Math.max(1, n + (Math.floor(Math.random() * 7) - 3));
+      if (opts.indexOf(cand) === -1) opts.push(cand);
+    }
+    opts.sort(function(){ return Math.random() - 0.5; });
+
+    countAnswers.innerHTML = '';
+    opts.forEach(function(val){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'answer-btn';
+      b.textContent = val;
+      b.addEventListener('click', function(){
+        if (b.dataset.done) return;
+        if (val === n) {
+          b.classList.add('correct');
+          b.dataset.done = '1';
+          countFeedback.textContent = '✅ Bravo ! Il y a bien ' + n + ' objets.';
+          countFeedback.className = 'demo-feedback ok';
+        } else {
+          b.classList.add('wrong');
+          setTimeout(function(){ b.classList.remove('wrong'); }, 500);
+          countFeedback.textContent = '❌ Pas tout à fait. Compte à nouveau.';
+          countFeedback.className = 'demo-feedback ko';
+        }
+      });
+      countAnswers.appendChild(b);
+    });
+
+    countFeedback.textContent = 'Combien d\u2019objets vois-tu ?';
+    countFeedback.className = 'demo-feedback';
+  }
+
+  /* =========================================================
+     DÉMO 2 — ASSOCIER LES FORMES
+     ========================================================= */
+  var SHAPES = [
+    { id:'cercle',   svg:'<svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="23" fill="#3D5AFE"/></svg>' },
+    { id:'carre',    svg:'<svg viewBox="0 0 60 60"><rect x="8" y="8" width="44" height="44" rx="9" fill="#FF8A3D"/></svg>' },
+    { id:'triangle', svg:'<svg viewBox="0 0 60 60"><polygon points="30,7 55,53 5,53" fill="#20C997"/></svg>' },
+    { id:'losange',  svg:'<svg viewBox="0 0 60 60"><polygon points="30,5 55,30 30,55 5,30" fill="#FF6B9D"/></svg>' }
+  ];
+  var matchLeft = document.getElementById('matchLeft');
+  var matchRight = document.getElementById('matchRight');
+  var matchFeedback = document.getElementById('matchFeedback');
+  var selectedLeft = null;
+  var matchedCount = 0;
+
+  function shuffle(arr){
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function buildFormes(){
+    selectedLeft = null;
+    matchedCount = 0;
+    matchLeft.innerHTML = '';
+    matchRight.innerHTML = '';
+    matchFeedback.textContent = 'Sélectionnez une forme à gauche, puis son identique à droite.';
+    matchFeedback.className = 'demo-feedback';
+
+    SHAPES.forEach(function(shape){
+      var el = document.createElement('button');
+      el.type = 'button';
+      el.className = 'match-item';
+      el.dataset.shape = shape.id;
+      el.setAttribute('aria-label', 'Forme modèle : ' + shape.id);
+      el.innerHTML = shape.svg;
+      el.addEventListener('click', function(){
+        matchLeft.querySelectorAll('.match-item').forEach(function(x){ x.classList.remove('selected'); });
+        el.classList.add('selected');
+        selectedLeft = el;
+        matchFeedback.textContent = 'Bien. Choisissez maintenant la forme identique à droite.';
+        matchFeedback.className = 'demo-feedback';
+      });
+      matchLeft.appendChild(el);
+    });
+
+    shuffle(SHAPES).forEach(function(shape){
+      var el = document.createElement('button');
+      el.type = 'button';
+      el.className = 'match-item';
+      el.dataset.shape = shape.id;
+      el.setAttribute('aria-label', 'Forme à associer');
+      el.innerHTML = shape.svg;
+      el.addEventListener('click', function(){
+        if (!selectedLeft) {
+          matchFeedback.textContent = 'Choisissez d\u2019abord une forme dans la colonne de gauche.';
+          matchFeedback.className = 'demo-feedback ko';
+          return;
+        }
+        if (el.dataset.shape === selectedLeft.dataset.shape) {
+          el.classList.add('matched');
+          selectedLeft.classList.add('matched');
+          selectedLeft.classList.remove('selected');
+          selectedLeft = null;
+          matchedCount++;
+          if (matchedCount === SHAPES.length) {
+            matchFeedback.textContent = '🎉 Parfait ! Toutes les formes sont associées.';
+            matchFeedback.className = 'demo-feedback ok';
+          } else {
+            matchFeedback.textContent = '✅ Bien joué ! Continuez.';
+            matchFeedback.className = 'demo-feedback ok';
+          }
+        } else {
+          el.classList.add('wrong');
+          var bad = el;
+          setTimeout(function(){ bad.classList.remove('wrong'); }, 520);
+          matchFeedback.textContent = '❌ Ce n\u2019est pas la même forme. Réessayez.';
+          matchFeedback.className = 'demo-feedback ko';
+        }
+      });
+      matchRight.appendChild(el);
+    });
+  }
+
+  /* =========================================================
+     DÉMO 3 — CLASSER DU PLUS PETIT AU PLUS GRAND
+     ========================================================= */
+  var orderStage = document.getElementById('orderStage');
+  var orderFeedback = document.getElementById('orderFeedback');
+  var SIZES = [34, 50, 66, 84];
+  var nextIndex = 0;
+
+  function buildOrdre(){
+    nextIndex = 0;
+    orderStage.innerHTML = '';
+    orderFeedback.textContent = 'Commencez par le plus petit.';
+    orderFeedback.className = 'demo-feedback';
+
+    shuffle(SIZES).forEach(function(size){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'order-item';
+      b.dataset.size = size;
+      b.style.width = size + 'px';
+      b.style.height = size + 'px';
+      b.setAttribute('aria-label', 'Cercle de taille ' + size);
+      b.addEventListener('click', function(){
+        if (b.classList.contains('done')) return;
+
+        if (parseInt(b.dataset.size, 10) === SIZES[nextIndex]) {
+          b.classList.add('done');
+          b.textContent = String(nextIndex + 1);
+          nextIndex++;
+          if (nextIndex === SIZES.length) {
+            orderFeedback.textContent = '🎉 Excellent ! Vous avez tout classé dans le bon ordre.';
+            orderFeedback.className = 'demo-feedback ok';
+          } else {
+            orderFeedback.textContent = '✅ Correct. Continuez.';
+            orderFeedback.className = 'demo-feedback ok';
+          }
+        } else {
+          b.classList.add('wrong');
+          var bad = b;
+          setTimeout(function(){ bad.classList.remove('wrong'); }, 520);
+          orderFeedback.textContent = '❌ Pas encore. Cherchez le plus petit restant.';
+          orderFeedback.className = 'demo-feedback ko';
+        }
+      });
+      orderStage.appendChild(b);
+    });
+  }
+
+  /* ---------- Boutons "Recommencer" ---------- */
+  document.querySelectorAll('[data-reset]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var type = btn.dataset.reset;
+      if (type === 'comptage') buildComptage();
+      if (type === 'formes')   buildFormes();
+      if (type === 'ordre')    buildOrdre();
+    });
+  });
+
+  /* ---------- Initialisation ---------- */
+  buildComptage();
+  buildFormes();
+  buildOrdre();
+
+  /* =========================================================
+     FORMULAIRE DE CONTACT
+     ========================================================= */
+  var form = document.getElementById('contactForm');
+  var success = document.getElementById('formSuccess');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    var required = form.querySelectorAll('[required]');
+    var valid = true;
+    var firstInvalid = null;
+
+    required.forEach(function(field){
+      var ok = field.type === 'checkbox' ? field.checked : field.value.trim() !== '';
+      if (field.type === 'email' && ok) {
+        ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(field.value.trim());
+      }
+      if (!ok) {
+        valid = false;
+        field.style.borderColor = '#FF6B9D';
+        if (!firstInvalid) firstInvalid = field;
+      } else {
+        field.style.borderColor = '';
+      }
+    });
+
+    if (!valid) {
+      if (firstInvalid) firstInvalid.focus();
+      return;
+    }
+
+    // Simulation d'envoi — à connecter à votre backend / service d'emailing
+    var submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Envoi en cours…';
+
+    setTimeout(function(){
+      form.reset();
+      form.style.display = 'none';
+      success.classList.add('show');
+      success.scrollIntoView({behavior:'smooth', block:'center'});
+    }, 700);
+  });
+
+  // Nettoyage visuel des champs à la saisie
+  form.querySelectorAll('input, select, textarea').forEach(function(field){
+    field.addEventListener('input', function(){ field.style.borderColor = ''; });
+    field.addEventListener('change', function(){ field.style.borderColor = ''; });
+  });
+
+})();
+</script>
+
+</body>
+</html>
