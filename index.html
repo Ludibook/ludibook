@@ -37,7 +37,6 @@ ul{list-style:none}
 h1,h2,h3,h4{line-height:1.15;font-weight:800;letter-spacing:-.02em}
 
 :root{
-  /* Palette style Playwize : violet vif + jaune + orange + pêche */
   --primary:#7C5CFC;
   --primary-600:#6A4AEB;
   --primary-50:#F0EBFF;
@@ -102,8 +101,6 @@ section[id]{scroll-margin-top:90px}
 .btn-outline:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px)}
 .btn-yellow{background:var(--yellow);color:var(--ink);box-shadow:0 12px 26px rgba(255,212,59,.45)}
 .btn-yellow:hover{background:#F5C82A;transform:translateY(-2px)}
-.btn-orange{background:var(--orange);color:#fff;box-shadow:0 12px 26px rgba(255,138,92,.4)}
-.btn-orange:hover{background:#F5794A;transform:translateY(-2px)}
 .btn-lg{padding:17px 32px;font-size:1rem}
 
 .btn-arrow{
@@ -140,12 +137,6 @@ section[id]{scroll-margin-top:90px}
 .deco-star.s2 svg{fill:var(--pink)}
 .deco-star.s3{width:30px;animation-delay:1.1s}
 .deco-star.s3 svg{fill:var(--mint)}
-
-.deco-dots{
-  position:absolute;width:90px;height:90px;pointer-events:none;opacity:.5;
-  background-image:radial-gradient(var(--primary) 2px, transparent 2px);
-  background-size:12px 12px;
-}
 
 @keyframes floatY{
   0%,100%{transform:translateY(0) rotate(-3deg)}
@@ -482,44 +473,6 @@ section[id]{scroll-margin-top:90px}
 .adv-check svg{width:15px;height:15px;color:#fff}
 .adv-item p{font-size:.95rem;font-weight:600;color:#fff}
 
-/* ============ SOLUTIONS ============ */
-.solutions{background:var(--bg-peach)}
-.sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
-.sol-card{
-  background:#fff;border:2px solid transparent;border-radius:26px;
-  padding:36px 28px;display:flex;flex-direction:column;
-  position:relative;overflow:hidden;
-  box-shadow:0 10px 30px rgba(255,138,92,.12);
-  transition:transform .3s, box-shadow .3s;
-}
-.sol-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:6px;
-  background:var(--orange);transform:scaleX(0);transform-origin:left;
-  transition:transform .4s;
-}
-.sol-card:hover::before{transform:scaleX(1)}
-.sol-card:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(255,138,92,.22)}
-.sol-card:nth-child(1)::before{background:var(--orange)}
-.sol-card:nth-child(2)::before{background:var(--primary)}
-.sol-card:nth-child(3)::before{background:var(--yellow)}
-
-.sol-ico{
-  width:60px;height:60px;border-radius:20px;
-  display:grid;place-items:center;margin-bottom:20px;
-  background:var(--orange-soft);color:var(--orange);
-}
-.sol-card:nth-child(2) .sol-ico{background:var(--primary-50);color:var(--primary)}
-.sol-card:nth-child(3) .sol-ico{background:var(--yellow-soft);color:#C99700}
-.sol-ico svg{width:28px;height:28px}
-
-.sol-card h3{font-size:1.18rem;margin-bottom:12px}
-.sol-card p{font-size:.94rem;color:var(--muted);flex:1;margin-bottom:22px}
-.sol-card ul{display:grid;gap:9px;margin-bottom:22px}
-.sol-card li{font-size:.87rem;color:var(--ink-2);font-weight:600;display:flex;gap:9px;align-items:center}
-.sol-card li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--orange);flex:0 0 6px}
-.sol-card:nth-child(2) li::before{background:var(--primary)}
-.sol-card:nth-child(3) li::before{background:var(--yellow)}
-
 /* ============ DEVICES ============ */
 .devices{background:#fff}
 .dev-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
@@ -596,41 +549,6 @@ section[id]{scroll-margin-top:90px}
 .level-card.soon h3{font-size:1.1rem;color:var(--ink-2)}
 .level-card.soon p{font-size:.88rem;margin:0}
 
-/* ============ POURQUOI ============ */
-.why{background:#fff}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.why-card{
-  background:#fff;border:2px solid var(--line);border-radius:24px;
-  padding:32px 28px;transition:transform .3s, box-shadow .3s, border-color .3s;
-  position:relative;overflow:hidden;
-}
-.why-card::before{
-  content:'';position:absolute;width:80px;height:80px;border-radius:50%;
-  top:-35px;right:-35px;transition:transform .4s;
-}
-.why-card:hover{transform:translateY(-6px) rotate(-1deg);box-shadow:var(--shadow);border-color:transparent}
-.why-card:hover::before{transform:scale(1.6)}
-.why-card:nth-child(1)::before{background:var(--primary-50)}
-.why-card:nth-child(2)::before{background:var(--orange-soft)}
-.why-card:nth-child(3)::before{background:var(--mint-soft)}
-.why-card:nth-child(4)::before{background:var(--pink-soft)}
-.why-card:nth-child(5)::before{background:var(--yellow-soft)}
-.why-card:nth-child(6)::before{background:var(--primary-50)}
-
-.why-ico{
-  width:56px;height:56px;border-radius:18px;
-  display:grid;place-items:center;margin-bottom:18px;
-  background:var(--primary-50);color:var(--primary);
-  position:relative;z-index:1;
-}
-.why-card:nth-child(2) .why-ico{background:var(--orange-soft);color:var(--orange)}
-.why-card:nth-child(3) .why-ico{background:var(--mint-soft);color:#0E9E77}
-.why-card:nth-child(4) .why-ico{background:var(--pink-soft);color:var(--pink)}
-.why-card:nth-child(5) .why-ico{background:var(--yellow-soft);color:#C99700}
-.why-ico svg{width:26px;height:26px}
-.why-card h3{font-size:1.05rem;margin-bottom:10px;position:relative;z-index:1}
-.why-card p{font-size:.92rem;color:var(--muted);position:relative;z-index:1}
-
 /* ============ CTA ============ */
 .cta-section{padding:20px 0 90px;background:#fff}
 .cta-band{
@@ -655,41 +573,20 @@ section[id]{scroll-margin-top:90px}
 .cta-band h2 .script::after{background:rgba(255,255,255,.3)}
 .cta-band p{color:rgba(255,255,255,.95);font-size:1.05rem;max-width:560px}
 
-/* ============ À PROPOS ============ */
+/* ============ À PROPOS (version épurée) ============ */
 .about{background:var(--bg-soft)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-.about h2{font-size:clamp(1.8rem,3.3vw,2.4rem);margin-bottom:22px}
-.about p{color:var(--ink-2);margin-bottom:20px;font-size:1.02rem}
-.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
-.stat{
-  background:#fff;border:2px solid var(--line);
-  border-radius:18px;padding:24px;
-  transition:transform .2s, box-shadow .2s;
+.about-wrap{
+  max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:1;
 }
-.stat:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm)}
-.stat b{display:block;font-size:1.5rem;color:var(--primary);letter-spacing:-.02em;margin-bottom:6px}
-.stat span{font-size:.85rem;color:var(--muted);font-weight:600}
+.about h2{
+  font-size:clamp(1.8rem,3.4vw,2.5rem);margin-bottom:24px;
+}
+.about p{
+  color:var(--ink-2);margin-bottom:22px;font-size:1.08rem;line-height:1.75;
+}
+.about p:last-of-type{margin-bottom:0}
 
-.about-points{display:grid;gap:14px}
-.about-point{
-  display:flex;gap:16px;background:#fff;
-  border:2px solid var(--line);border-radius:20px;padding:22px;
-  transition:transform .22s, box-shadow .22s;
-}
-.about-point:hover{transform:translateX(6px);box-shadow:var(--shadow-sm)}
-.about-point-ico{
-  width:48px;height:48px;flex:0 0 48px;border-radius:15px;
-  display:grid;place-items:center;
-  background:var(--primary-50);color:var(--primary);
-}
-.about-point:nth-child(2) .about-point-ico{background:var(--orange-soft);color:var(--orange)}
-.about-point:nth-child(3) .about-point-ico{background:var(--mint-soft);color:#0E9E77}
-.about-point:nth-child(4) .about-point-ico{background:var(--pink-soft);color:var(--pink)}
-.about-point-ico svg{width:22px;height:22px}
-.about-point h4{font-size:1rem;margin-bottom:5px}
-.about-point p{font-size:.88rem;color:var(--muted);margin:0}
-
-/* ============ CONTACT (uniquement WhatsApp) ============ */
+/* ============ CONTACT (WhatsApp uniquement) ============ */
 .contact{background:#fff;padding:90px 0}
 .contact-wrap{
   max-width:640px;margin:0 auto;text-align:center;
@@ -812,11 +709,8 @@ section[id]{scroll-margin-top:90px}
 
   .steps-grid{grid-template-columns:repeat(2,1fr)}
   .pub-grid{grid-template-columns:1fr;gap:44px}
-  .sol-grid{grid-template-columns:1fr;gap:20px}
   .dev-grid{grid-template-columns:repeat(2,1fr)}
   .level-grid{grid-template-columns:1fr;gap:20px}
-  .why-grid{grid-template-columns:repeat(2,1fr)}
-  .about-grid{grid-template-columns:1fr;gap:44px}
   .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
   .cta-band{padding:48px 34px}
 }
@@ -837,7 +731,6 @@ section[id]{scroll-margin-top:90px}
 
   .steps-grid{grid-template-columns:1fr}
   .dev-grid{grid-template-columns:1fr}
-  .why-grid{grid-template-columns:1fr}
   .demo-card{padding:24px 20px}
   .demo-answers{grid-template-columns:repeat(2,1fr)}
   .match-wrap{gap:16px}
@@ -847,9 +740,7 @@ section[id]{scroll-margin-top:90px}
   .footer-bottom{flex-direction:column;align-items:flex-start}
   .cta-band{padding:40px 26px;border-radius:24px}
   .cta-band .btn{width:100%}
-  .about-stats{grid-template-columns:1fr}
   .blob{display:none}
-  .deco-dots{display:none}
 
   .whatsapp-big{
     padding:22px;gap:14px;width:100%;
@@ -918,19 +809,19 @@ section[id]{scroll-margin-top:90px}
       <div class="hero-content">
         <span class="eyebrow">
           <span class="eyebrow-dot"></span>
-          Studio marocain · Édition scolaire
+          Solutions éducatives interactives
         </span>
 
         <h1>
-          Le studio qui transforme vos
-          <span class="script">manuels</span>
-          en activités
-          <span class="script highlight">interactives</span>
+          Transformez vos exercices en
+          <span class="script">expériences</span>
+          <span class="script highlight">interactives.</span>
         </h1>
 
         <p class="lead">
-          Ludibook crée des exercices et jeux éducatifs interactifs qui prolongent vos livres scolaires,
-          accessibles par QR code sur ordinateur, tablette et tableau interactif.
+          Ludibook crée des exercices et jeux éducatifs interactifs en transformant les exercices
+          de vos livres scolaires en expériences numériques ludiques, interactives et adaptées
+          aux enfants, facilement accessibles par QR code.
         </p>
 
         <div class="hero-actions">
@@ -1274,66 +1165,6 @@ section[id]{scroll-margin-top:90px}
   </div>
 </section>
 
-<!-- ================= SOLUTIONS ================= -->
-<section class="solutions">
-  <span class="blob blob-2"></span>
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow"><span class="eyebrow-dot"></span>Nos solutions</span>
-      <h2>Trois façons de <span class="script">travailler</span> avec nous</h2>
-      <p>Selon votre catalogue, vos priorités et le rythme de vos publications.</p>
-    </div>
-
-    <div class="sol-grid">
-      <article class="sol-card reveal">
-        <div class="sol-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9l-3.8 3.8Z"/></svg>
-        </div>
-        <h3>Création sur mesure</h3>
-        <p>Nous transformons vos exercices et contenus pédagogiques en activités interactives.</p>
-        <ul>
-          <li>À partir de vos pages existantes</li>
-          <li>Respect de votre charte éditoriale</li>
-          <li>Validation avant intégration</li>
-        </ul>
-      </article>
-
-      <article class="sol-card reveal">
-        <div class="sol-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10a3 3 0 0 1 3 3v12a2.5 2.5 0 0 0-2.5-2.5H4V5.5Z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H14a3 3 0 0 0-3 3v12a2.5 2.5 0 0 1 2.5-2.5H20V5.5Z"/></svg>
-        </div>
-        <h3>Catalogue Ludibook</h3>
-        <p>Accédez à une bibliothèque d'activités éducatives déjà disponibles.</p>
-        <ul>
-          <li>Activités prêtes à intégrer</li>
-          <li>Maternelle et primaire</li>
-          <li>Plusieurs matières couvertes</li>
-        </ul>
-      </article>
-
-      <article class="sol-card reveal">
-        <div class="sol-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/><path d="M12 11v6M9 14h6"/></svg>
-        </div>
-        <h3>Projet éditorial complet</h3>
-        <p>Création d'un ensemble d'activités interactives pour accompagner un manuel ou une collection.</p>
-        <ul>
-          <li>Périmètre défini avec vous</li>
-          <li>Cohérence sur toute la collection</li>
-          <li>Accompagnement de A à Z</li>
-        </ul>
-      </article>
-    </div>
-
-    <div style="text-align:center" class="reveal">
-      <a href="#contact" class="btn btn-primary btn-lg">
-        Parler de votre projet
-        <span class="btn-arrow">→</span>
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- ================= COMPATIBILITÉ ================= -->
 <section class="devices" id="compatibilite">
   <span class="deco-spiral" style="top:15%;right:5%">
@@ -1425,67 +1256,6 @@ section[id]{scroll-margin-top:90px}
   </div>
 </section>
 
-<!-- ================= POURQUOI ================= -->
-<section class="why" id="pourquoi">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow"><span class="eyebrow-dot"></span>Pourquoi Ludibook</span>
-      <h2>Un <span class="script">studio</span>, pas un logiciel</h2>
-      <p>Ludibook ne vend pas d'outil de création d'exercices. Nous concevons et produisons directement les contenus éducatifs interactifs.</p>
-    </div>
-
-    <div class="why-grid">
-      <article class="why-card reveal">
-        <div class="why-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="M3 14l9 5 9-5"/></svg>
-        </div>
-        <h3>Création pédagogique</h3>
-        <p>Des activités pensées pour favoriser l'apprentissage par l'interaction.</p>
-      </article>
-
-      <article class="why-card reveal">
-        <div class="why-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5s1.3 1.8 3.5 1.8 3.5-1.8 3.5-1.8M9 9.5h.01M15 9.5h.01"/></svg>
-        </div>
-        <h3>Expérience ludique</h3>
-        <p>Les exercices deviennent plus dynamiques et engageants.</p>
-      </article>
-
-      <article class="why-card reveal">
-        <div class="why-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="4.5"/></svg>
-        </div>
-        <h3>Adaptation aux contenus</h3>
-        <p>Les activités peuvent être conçues selon les besoins de chaque projet éditorial.</p>
-      </article>
-
-      <article class="why-card reveal">
-        <div class="why-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="14" height="11" rx="2"/><rect x="17" y="8" width="5" height="12" rx="1.5"/><path d="M6 19h6"/></svg>
-        </div>
-        <h3>Technologie accessible</h3>
-        <p>Les activités fonctionnent sur différents appareils, sans contrainte matérielle.</p>
-      </article>
-
-      <article class="why-card reveal">
-        <div class="why-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.6 5.6 6 .7-4.4 4.2 1.2 6.1L12 16.7 6.6 19.6l1.2-6.1L3.4 9.3l6-.7L12 3Z"/></svg>
-        </div>
-        <h3>Solution marocaine</h3>
-        <p>Ludibook est pensé pour répondre aux besoins du secteur éducatif et éditorial marocain.</p>
-      </article>
-
-      <article class="why-card reveal">
-        <div class="why-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10a3 3 0 0 1 3 3v12a2.5 2.5 0 0 0-2.5-2.5H4V5.5Z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H14a3 3 0 0 0-3 3v12a2.5 2.5 0 0 1 2.5-2.5H20V5.5Z"/></svg>
-        </div>
-        <h3>Intégration au livre</h3>
-        <p>Le QR code relie directement la page papier à l'activité numérique correspondante.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
 <!-- ================= CTA ================= -->
 <section class="cta-section">
   <div class="container">
@@ -1502,78 +1272,27 @@ section[id]{scroll-margin-top:90px}
   </div>
 </section>
 
-<!-- ================= À PROPOS ================= -->
+<!-- ================= À PROPOS (version épurée) ================= -->
 <section class="about" id="apropos">
   <span class="blob blob-3"></span>
+  <span class="deco-star s2" style="top:12%;right:8%">
+    <svg viewBox="0 0 40 40"><path d="M20 2l5.5 12.5L38 17l-9.5 8.5L31 38 20 31.5 9 38l2.5-12.5L2 17l12.5-2.5z"/></svg>
+  </span>
+
   <div class="container">
-    <div class="about-grid">
-      <div class="reveal">
-        <span class="eyebrow"><span class="eyebrow-dot"></span>À propos</span>
-        <h2>Un studio de contenus éducatifs <span class="script">interactifs</span></h2>
-        <p>
-          Ludibook est une entreprise marocaine spécialisée dans la création de contenus éducatifs
-          numériques interactifs. Nous concevons des exercices et des jeux pédagogiques destinés
-          aux enfants, en complément des livres et manuels scolaires.
-        </p>
-        <p>
-          Nous travaillons avec les maisons d'édition, les éditeurs de manuels scolaires, les écoles
-          privées et les professionnels de l'éducation. Notre rôle n'est pas de fournir un outil de
-          création : nous produisons nous-mêmes les activités, à partir de vos contenus.
-        </p>
-
-        <div class="about-stats">
-          <div class="stat">
-            <b>Maternelle &amp; Primaire</b>
-            <span>Niveaux couverts aujourd'hui</span>
-          </div>
-          <div class="stat">
-            <b>Sur mesure</b>
-            <span>Adapté à votre charte éditoriale</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="about-points reveal">
-        <div class="about-point">
-          <span class="about-point-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="M3 14l9 5 9-5"/></svg>
-          </span>
-          <div>
-            <h4>Expertise pédagogique</h4>
-            <p>Chaque activité est construite autour d'un objectif d'apprentissage précis.</p>
-          </div>
-        </div>
-
-        <div class="about-point">
-          <span class="about-point-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9l-3.8 3.8Z"/></svg>
-          </span>
-          <div>
-            <h4>Production maîtrisée</h4>
-            <p>Conception, développement et intégration : un seul interlocuteur.</p>
-          </div>
-        </div>
-
-        <div class="about-point">
-          <span class="about-point-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.6 5.6 6 .7-4.4 4.2 1.2 6.1L12 16.7 6.6 19.6l1.2-6.1L3.4 9.3l6-.7L12 3Z"/></svg>
-          </span>
-          <div>
-            <h4>Approche marocaine</h4>
-            <p>Des contenus alignés sur les réalités du secteur éducatif et éditorial marocain.</p>
-          </div>
-        </div>
-
-        <div class="about-point">
-          <span class="about-point-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-          </span>
-          <div>
-            <h4>Évolution progressive</h4>
-            <p>L'architecture de nos contenus est pensée pour accompagner vos futurs projets.</p>
-          </div>
-        </div>
-      </div>
+    <div class="about-wrap reveal">
+      <span class="eyebrow"><span class="eyebrow-dot"></span>À propos</span>
+      <h2>Un studio de contenus éducatifs <span class="script">interactifs</span></h2>
+      <p>
+        Ludibook est une entreprise marocaine spécialisée dans la création de contenus éducatifs
+        numériques interactifs. Nous concevons des exercices et des jeux pédagogiques destinés
+        aux enfants, en complément des livres et manuels scolaires.
+      </p>
+      <p>
+        Nous travaillons avec les maisons d'édition, les éditeurs de manuels scolaires, les écoles
+        privées et les professionnels de l'éducation. Notre rôle n'est pas de fournir un outil de
+        création : nous produisons nous-mêmes les activités, à partir de vos contenus.
+      </p>
     </div>
   </div>
 </section>
@@ -1658,8 +1377,8 @@ section[id]{scroll-margin-top:90px}
         <h4>Entreprise</h4>
         <ul>
           <li><a href="#apropos">À propos</a></li>
-          <li><a href="#pourquoi">Pourquoi Ludibook</a></li>
           <li><a href="#compatibilite">Compatibilité</a></li>
+          <li><a href="#niveaux">Niveaux</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
