@@ -1216,6 +1216,145 @@ section[id] { scroll-margin-top: 100px; }
 }
 .level-card.soon:hover .plus { transform: rotate(90deg) scale(1.1); border-color: var(--primary); color: var(--primary); }
 
+/* ============ TARIFS / NOS OFFRES ============ */
+.pricing { background: #fff; }
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+.price-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 44px 36px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out), border-color 0.35s ease;
+  will-change: transform;
+  overflow: hidden;
+}
+.price-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: var(--border);
+  transition: background 0.4s ease;
+}
+.price-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-focus);
+}
+.price-card:hover::before { background: linear-gradient(90deg, var(--primary), #818CF8); }
+
+/* Carte mise en avant */
+.price-card.featured {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-glow);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFF 100%);
+}
+.price-card.featured::before { background: linear-gradient(90deg, var(--primary), #818CF8); }
+.price-card.featured:hover { box-shadow: 0 32px 70px -16px var(--primary-glow); }
+
+.price-badge {
+  position: absolute;
+  top: 22px; right: 22px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), #818CF8);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 6px 14px -4px var(--primary-glow);
+}
+
+.price-num {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: var(--ink-subtle);
+  margin-bottom: 18px;
+}
+.price-card.featured .price-num { color: var(--primary); }
+
+.price-tag {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink-main);
+  margin-bottom: 10px;
+}
+.price-tag small {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--ink-muted);
+  letter-spacing: 0;
+  margin-left: 6px;
+}
+.price-card.featured .price-tag { color: var(--primary); }
+
+.price-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink-main);
+  margin-bottom: 18px;
+}
+
+.price-desc {
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  margin-bottom: 26px;
+}
+
+.price-features {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+.price-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink-main);
+  line-height: 1.5;
+}
+.price-features li svg {
+  width: 20px; height: 20px;
+  flex: 0 0 20px;
+  color: var(--accent-mint);
+  margin-top: 2px;
+}
+
+.price-card .btn { margin-top: auto; width: 100%; }
+
+.price-note {
+  margin-top: 40px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 0.98rem;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px 28px;
+}
+
 /* ============ CTA BANNER ============ */
 .cta-section { padding: 40px 0 110px; }
 .cta-band {
@@ -1438,6 +1577,8 @@ section[id] { scroll-margin-top: 100px; }
   .pub-grid { grid-template-columns: 1fr; gap: 40px; }
   .dev-grid { grid-template-columns: repeat(2, 1fr); }
   .level-grid { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; gap: 24px; }
+  .price-card { padding: 36px 28px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
   .cta-band { padding: 40px 32px; }
   .count-answers { grid-template-columns: repeat(4, 1fr); }
@@ -1515,6 +1656,7 @@ section[id] { scroll-margin-top: 100px; }
       <ul class="nav-links" id="navLinks">
         <li><a href="#accueil">Accueil</a></li>
         <li><a href="#activites">Nos activités</a></li>
+        <li><a href="#tarifs">Tarifs</a></li>
         <li><a href="#editeurs">Pour les éditeurs</a></li>
         <li><a href="#demonstrations">Essayez en direct</a></li>
         <li><a href="#apropos">À propos</a></li>
@@ -2127,6 +2269,98 @@ section[id] { scroll-margin-top: 100px; }
   </div>
 </section>
 
+<!-- ================= TARIFS / NOS OFFRES ================= -->
+<section class="pricing" id="tarifs">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="eyebrow-dot"></span>Nos offres</span>
+      <h2>Nos offres pour vos projets pédagogiques</h2>
+      <p>Choisissez l'offre adaptée à votre projet, que vous soyez un éditeur, une école ou un professionnel de l'éducation.</p>
+    </div>
+
+    <div class="pricing-grid stagger">
+
+      <!-- 01 — ESSAI GRATUIT -->
+      <article class="price-card reveal">
+        <div class="price-num">01 — ESSAI GRATUIT</div>
+        <div class="price-tag">0 <small>DH</small></div>
+        <h3>1 exercice interactif offert</h3>
+        <p class="price-desc">
+          Testez gratuitement notre solution et découvrez comment vos contenus pédagogiques peuvent devenir des activités numériques interactives et attractives.
+        </p>
+        <ul class="price-features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            1 exercice interactif
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Découverte de notre solution
+          </li>
+        </ul>
+        <a href="#contact" class="btn btn-outline btn-lg">Commencer gratuitement</a>
+      </article>
+
+      <!-- 02 — PACK STANDARD -->
+      <article class="price-card featured reveal">
+        <span class="price-badge">Le plus choisi</span>
+        <div class="price-num">02 — PACK STANDARD</div>
+        <div class="price-tag">999 <small>DH</small></div>
+        <h3>30 exercices interactifs</h3>
+        <p class="price-desc">
+          Transformez une série d'exercices, un chapitre ou une partie de votre contenu pédagogique en activités numériques prêtes à être utilisées.
+        </p>
+        <ul class="price-features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            30 exercices interactifs
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Intégration QR code
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+           Mise en ligne incluse pour la première année
+          </li>
+        </ul>
+        <a href="#contact" class="btn btn-primary btn-lg">Choisir ce pack</a>
+      </article>
+
+      <!-- 03 — PROJET SUR MESURE -->
+      <article class="price-card reveal">
+        <div class="price-num">03 — PROJET SUR MESURE</div>
+        <div class="price-tag">SUR DEVIS</div>
+        <h3>Une solution conçue pour votre projet</h3>
+        <p class="price-desc">
+          Pour les maisons d'édition, écoles et professionnels de l'éducation souhaitant développer un projet numérique complet et personnalisé.
+        </p>
+        <ul class="price-features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Nombre d'exercices selon vos besoins
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Design et identité visuelle personnalisés
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Accompagnement complet
+          </li>
+        </ul>
+        <a href="#contact" class="btn btn-yellow btn-lg">Demander un devis</a>
+      </article>
+
+    </div>
+
+    <p class="price-note reveal">
+      Les frais de mise en ligne et d’hébergement sont calculés séparément selon les besoins du projet.
+
+    </p>
+  </div>
+</section>
+
 <!-- ================= CTA BANNER ================= -->
 <section class="cta-section">
   <div class="container">
@@ -2148,7 +2382,7 @@ section[id] { scroll-margin-top: 100px; }
   <div class="container">
     <div class="about-wrap reveal">
       <span class="eyebrow"><span class="eyebrow-dot"></span>À propos de Ludibook</span>
-      <h2>Un studio de contenus éducatifs interactifs</h2>
+      <h2>Un studio dédié au numérique éducatif</h2>
       <p>
        Ludibook est un studio marocain spécialisé dans la création de contenus éducatifs numériques interactifs. Nous accompagnons les maisons d’édition, les écoles privées et les professionnels de l’éducation dans la transformation de leurs exercices et supports pédagogiques en activités et jeux numériques adaptés aux enfants.
       </p>
@@ -2225,6 +2459,7 @@ section[id] { scroll-margin-top: 100px; }
         <ul>
           <li><a href="#accueil">Accueil</a></li>
           <li><a href="#activites">Nos activités</a></li>
+          <li><a href="#tarifs">Tarifs</a></li>
           <li><a href="#editeurs">Éditeurs</a></li>
           <li><a href="#demonstrations">Essayez en direct</a></li>
         </ul>
@@ -2244,8 +2479,8 @@ section[id] { scroll-margin-top: 100px; }
         <h4>Contact</h4>
         <ul>
           <li><a href="https://wa.me/212522000000" target="_blank" rel="noopener">WhatsApp Direct</a></li>
-          <li><a href="mailto:contact@ludibook.ma">ludibook@gmail.com</a></li>
-         
+          <li><a href="mailto:contact@ludibook.ma">contact@ludibook.ma</a></li>
+          <li>Casablanca, Maroc</li>
         </ul>
       </div>
     </div>
