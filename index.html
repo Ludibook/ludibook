@@ -91,6 +91,22 @@ h1, h2, h3, h4 {
   letter-spacing: -0.02em;
 }
 
+/* ============ ICÔNES SVG (remplace les emojis d'interface) ============ */
+.icon-ui {
+  width: 1.25em;
+  height: 1.25em;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: 0 0 auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+.icon-ui-lg { width: 28px; height: 28px; }
+.icon-ui-xl { width: 32px; height: 32px; }
+
 /* ============ LAYOUT & UTILS ============ */
 .container {
   width: 100%;
@@ -369,6 +385,7 @@ section[id] { scroll-margin-top: 100px; }
   border: 3px solid #fff; margin-left: -12px;
   box-shadow: var(--shadow-sm);
   transition: transform 0.35s var(--ease-spring), box-shadow 0.35s ease;
+  color: var(--primary);
 }
 .avatar:hover { transform: translateY(-4px) scale(1.12); z-index: 2; box-shadow: var(--shadow-md); }
 .avatar:first-child { margin-left: 0; }
@@ -555,11 +572,13 @@ section[id] { scroll-margin-top: 100px; }
 }
 .act-ico {
   width: 64px; height: 64px; border-radius: 20px;
-  display: grid; place-items: center; font-size: 1.8rem;
+  display: grid; place-items: center;
   background: var(--bg-subtle);
-  transition: transform 0.5s var(--ease-spring), background-color 0.35s ease;
+  color: var(--primary);
+  transition: transform 0.5s var(--ease-spring), background-color 0.35s ease, color 0.35s ease;
 }
-.act-card:hover .act-ico { transform: scale(1.12) rotate(-5deg); background: var(--primary-light); }
+.act-ico svg { width: 30px; height: 30px; }
+.act-card:hover .act-ico { transform: scale(1.12) rotate(-5deg); background: var(--primary); color: #fff; }
 .act-card h3 { font-size: 1.05rem; font-weight: 700; }
 .act-card small { font-size: 0.8rem; color: var(--ink-muted); font-weight: 500; }
 .act-card .go {
@@ -580,7 +599,8 @@ section[id] { scroll-margin-top: 100px; }
   transition: transform 0.35s var(--ease-out), background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.35s ease;
   display: inline-flex; align-items: center; gap: 8px;
 }
-.demo-tab .demo-tab-ico { font-size: 1.1rem; }
+.demo-tab .demo-tab-ico { color: var(--primary); display: inline-flex; }
+.demo-tab.active .demo-tab-ico { color: #fff; }
 .demo-tab:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
 .demo-tab.active {
   background: var(--primary); color: #fff; border-color: var(--primary);
@@ -606,7 +626,8 @@ section[id] { scroll-margin-top: 100px; }
 .demo-card:hover { box-shadow: var(--shadow-lg); }
 
 .demo-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; margin-bottom: 24px; flex-wrap: wrap; }
-.demo-card-head h3 { font-size: 1.35rem; margin-bottom: 6px; }
+.demo-card-head h3 { font-size: 1.35rem; margin-bottom: 6px; display: flex; align-items: center; gap: 10px; }
+.demo-card-head h3 .icon-ui { color: var(--primary); }
 .demo-card-head p { font-size: 0.92rem; color: var(--ink-muted); }
 .demo-meta {
   display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap;
@@ -673,7 +694,7 @@ section[id] { scroll-margin-top: 100px; }
 }
 .sound-toggle:hover { border-color: var(--primary); color: var(--primary); }
 .sound-toggle.on { background: var(--primary-light); border-color: var(--primary); color: var(--primary); }
-.sound-toggle .sound-icon { font-size: 1rem; }
+.sound-toggle .sound-icon { display: inline-flex; font-size: 1rem; }
 
 /* ===== Exercice 1 : Compter les animaux ===== */
 .count-stage-inner { display: flex; flex-direction: column; gap: 24px; width: 100%; align-items: center; }
@@ -942,6 +963,7 @@ section[id] { scroll-margin-top: 100px; }
   color: var(--ink-main);
   display: flex; align-items: center; gap: 10px;
 }
+.quest-title .icon-ui { color: var(--primary); }
 .quest-subtitle {
   font-size: 0.9rem; color: var(--ink-muted);
   margin-bottom: 20px;
@@ -1194,6 +1216,145 @@ section[id] { scroll-margin-top: 100px; }
 }
 .level-card.soon:hover .plus { transform: rotate(90deg) scale(1.1); border-color: var(--primary); color: var(--primary); }
 
+/* ============ TARIFS / NOS OFFRES ============ */
+.pricing { background: #fff; }
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+.price-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 44px 36px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out), border-color 0.35s ease;
+  will-change: transform;
+  overflow: hidden;
+}
+.price-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: var(--border);
+  transition: background 0.4s ease;
+}
+.price-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-focus);
+}
+.price-card:hover::before { background: linear-gradient(90deg, var(--primary), #818CF8); }
+
+/* Carte mise en avant */
+.price-card.featured {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-glow);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFF 100%);
+}
+.price-card.featured::before { background: linear-gradient(90deg, var(--primary), #818CF8); }
+.price-card.featured:hover { box-shadow: 0 32px 70px -16px var(--primary-glow); }
+
+.price-badge {
+  position: absolute;
+  top: 22px; right: 22px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), #818CF8);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 6px 14px -4px var(--primary-glow);
+}
+
+.price-num {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: var(--ink-subtle);
+  margin-bottom: 18px;
+}
+.price-card.featured .price-num { color: var(--primary); }
+
+.price-tag {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink-main);
+  margin-bottom: 10px;
+}
+.price-tag small {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--ink-muted);
+  letter-spacing: 0;
+  margin-left: 6px;
+}
+.price-card.featured .price-tag { color: var(--primary); }
+
+.price-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink-main);
+  margin-bottom: 18px;
+}
+
+.price-desc {
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  margin-bottom: 26px;
+}
+
+.price-features {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+.price-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink-main);
+  line-height: 1.5;
+}
+.price-features li svg {
+  width: 20px; height: 20px;
+  flex: 0 0 20px;
+  color: var(--accent-mint);
+  margin-top: 2px;
+}
+
+.price-card .btn { margin-top: auto; width: 100%; }
+
+.price-note {
+  margin-top: 40px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 0.98rem;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px 28px;
+}
+
 /* ============ CTA BANNER ============ */
 .cta-section { padding: 40px 0 110px; }
 .cta-band {
@@ -1416,6 +1577,8 @@ section[id] { scroll-margin-top: 100px; }
   .pub-grid { grid-template-columns: 1fr; gap: 40px; }
   .dev-grid { grid-template-columns: repeat(2, 1fr); }
   .level-grid { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; gap: 24px; }
+  .price-card { padding: 36px 28px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
   .cta-band { padding: 40px 32px; }
   .count-answers { grid-template-columns: repeat(4, 1fr); }
@@ -1492,9 +1655,9 @@ section[id] { scroll-margin-top: 100px; }
 
       <ul class="nav-links" id="navLinks">
         <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#fonctionnement">">Notre solution</a></li>
+        <li><a href="#fonctionnement">Notre solution</a></li>
         <li><a href="#editeurs">Pour les éditeurs</a></li>
-        <li><a href="#demonstrations">Essayez en direct</a></li>
+        <li><a href="#tarifs">Tarifs</a></li>
         <li><a href="#apropos">À propos</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -1541,9 +1704,15 @@ section[id] { scroll-margin-top: 100px; }
 
         <div class="hero-trust">
           <div class="trust-avatars">
-            <span class="avatar" style="background:#FEF3C7">📚</span>
-            <span class="avatar" style="background:#FFEDD5">✏️</span>
-            <span class="avatar" style="background:#D1FAE5">🎯</span>
+            <span class="avatar" style="background:#FEF3C7">
+              <svg class="icon-ui" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+            </span>
+            <span class="avatar" style="background:#FFEDD5">
+              <svg class="icon-ui" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </span>
+            <span class="avatar" style="background:#D1FAE5">
+              <svg class="icon-ui" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </span>
           </div>
           <p>Pensé pour les maisons d'édition &amp; écoles</p>
         </div>
@@ -1664,61 +1833,81 @@ section[id] { scroll-margin-top: 100px; }
 
     <div class="activities-grid stagger">
       <a href="#demonstrations" class="act-card reveal">
-        <span class="act-ico">➗</span>
+        <span class="act-ico">
+          <svg class="icon-ui" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </span>
         <h3>Mathématiques</h3>
         <small>Calcul, géométrie, nombres</small>
         <span class="go">Tester →</span>
       </a>
       <a href="#demonstrations" class="act-card reveal">
-        <span class="act-ico">📖</span>
+        <span class="act-ico">
+          <svg class="icon-ui" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+        </span>
         <h3>Français</h3>
         <small>Lecture, orthographe, mots</small>
         <span class="go">Tester →</span>
       </a>
       <a href="#demonstrations" class="act-card reveal">
-        <span class="act-ico">✍️</span>
+        <span class="act-ico">
+          <svg class="icon-ui" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </span>
         <h3>Langue Arabe</h3>
         <small>Lettres, vocabulaire</small>
         <span class="go">Tester →</span>
       </a>
       <a href="#demonstrations" class="act-card reveal">
-        <span class="act-ico">🧩</span>
+        <span class="act-ico">
+          <svg class="icon-ui" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        </span>
         <h3>Logique</h3>
         <small>Déduction &amp; réflexion</small>
         <span class="go">Tester →</span>
       </a>
       <a href="#demonstrations" class="act-card reveal">
-        <span class="act-ico">🔷</span>
+        <span class="act-ico">
+          <svg class="icon-ui" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="3"/></svg>
+        </span>
         <h3>Formes &amp; Couleurs</h3>
         <small>Observation visuelle</small>
         <span class="go">Tester →</span>
       </a>
       <a href="#demonstrations" class="act-card reveal">
-        <span class="act-ico">📊</span>
+        <span class="act-ico">
+          <svg class="icon-ui" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </span>
         <h3>Classement</h3>
         <small>Tri et catégorisation</small>
         <span class="go">Tester →</span>
       </a>
       <a href="#demonstrations" class="act-card reveal">
-        <span class="act-ico">🔗</span>
+        <span class="act-ico">
+          <svg class="icon-ui" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </span>
         <h3>Association</h3>
         <small>Paires &amp; correspondances</small>
         <span class="go">Tester →</span>
       </a>
       <a href="#demonstrations" class="act-card reveal">
-        <span class="act-ico">🧠</span>
+        <span class="act-ico">
+          <svg class="icon-ui" viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg>
+        </span>
         <h3>Mémoire</h3>
         <small>Concentration et rappel</small>
         <span class="go">Tester →</span>
       </a>
       <a href="#demonstrations" class="act-card reveal">
-        <span class="act-ico">🔎</span>
+        <span class="act-ico">
+          <svg class="icon-ui" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </span>
         <h3>Découverte</h3>
         <small>Éveil &amp; sciences</small>
         <span class="go">Tester →</span>
       </a>
       <a href="#demonstrations" class="act-card reveal">
-        <span class="act-ico">🧸</span>
+        <span class="act-ico">
+          <svg class="icon-ui" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </span>
         <h3>Maternelle</h3>
         <small>Éveil global 4–6 ans</small>
         <span class="go">Tester →</span>
@@ -1739,19 +1928,29 @@ section[id] { scroll-margin-top: 100px; }
 
     <div class="demo-tabs reveal" role="tablist">
       <button class="demo-tab active" data-demo="count" role="tab" aria-selected="true">
-        <span class="demo-tab-ico">🧮</span> Compter
+        <span class="demo-tab-ico">
+          <svg class="icon-ui" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </span> Compter
       </button>
       <button class="demo-tab" data-demo="match" role="tab" aria-selected="false">
-        <span class="demo-tab-ico">🔷</span> Formes
+        <span class="demo-tab-ico">
+          <svg class="icon-ui" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="3"/></svg>
+        </span> Formes
       </button>
       <button class="demo-tab" data-demo="size" role="tab" aria-selected="false">
-        <span class="demo-tab-ico">📏</span> Tailles
+        <span class="demo-tab-ico">
+          <svg class="icon-ui" viewBox="0 0 24 24"><path d="M21 3H3v18h18V3z"/><path d="M9 3v18"/><path d="M3 9h18"/></svg>
+        </span> Tailles
       </button>
       <button class="demo-tab" data-demo="suite" role="tab" aria-selected="false">
-        <span class="demo-tab-ico">🧩</span> Suite
+        <span class="demo-tab-ico">
+          <svg class="icon-ui" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        </span> Suite
       </button>
       <button class="demo-tab" data-demo="quest" role="tab" aria-selected="false">
-        <span class="demo-tab-ico">🧭</span> Explorateur
+        <span class="demo-tab-ico">
+          <svg class="icon-ui" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+        </span> Explorateur
       </button>
     </div>
 
@@ -1760,16 +1959,24 @@ section[id] { scroll-margin-top: 100px; }
       <div class="demo-card">
         <div class="demo-card-head">
           <div>
-            <h3>🐰 Compter les animaux</h3>
+            <h3>
+              <svg class="icon-ui" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Compter les animaux
+            </h3>
             <p>Compte les animaux affichés et clique sur la bonne réponse.</p>
             <div class="demo-meta">
-              <span>👶 4–5 ans</span>
+              <span>
+                <svg class="icon-ui" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                4–5 ans
+              </span>
               <span class="neutral">Nombres et quantités</span>
               <span class="neutral">Cliquer sur la bonne réponse</span>
             </div>
           </div>
           <button class="sound-toggle on" id="soundToggle1" aria-label="Activer ou désactiver le son">
-            <span class="sound-icon">🔊</span> Son
+            <span class="sound-icon">
+              <svg class="icon-ui" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            </span> Son
           </button>
         </div>
         <div class="demo-hud">
@@ -1789,16 +1996,24 @@ section[id] { scroll-margin-top: 100px; }
       <div class="demo-card">
         <div class="demo-card-head">
           <div>
-            <h3>🔷 Associer les formes</h3>
+            <h3>
+              <svg class="icon-ui" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="3"/></svg>
+              Associer les formes
+            </h3>
             <p>Glisse chaque forme dans la zone correspondante.</p>
             <div class="demo-meta">
-              <span>👶 4–6 ans</span>
+              <span>
+                <svg class="icon-ui" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                4–6 ans
+              </span>
               <span class="neutral">Reconnaissance visuelle</span>
               <span class="neutral">Glisser-déposer</span>
             </div>
           </div>
           <button class="sound-toggle on" id="soundToggle2" aria-label="Activer ou désactiver le son">
-            <span class="sound-icon">🔊</span> Son
+            <span class="sound-icon">
+              <svg class="icon-ui" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            </span> Son
           </button>
         </div>
         <div class="demo-hud">
@@ -1818,16 +2033,24 @@ section[id] { scroll-margin-top: 100px; }
       <div class="demo-card">
         <div class="demo-card-head">
           <div>
-            <h3>📏 Les tailles</h3>
+            <h3>
+              <svg class="icon-ui" viewBox="0 0 24 24"><path d="M21 3H3v18h18V3z"/><path d="M9 3v18"/><path d="M3 9h18"/></svg>
+              Les tailles
+            </h3>
             <p>Glisse les cercles dans les emplacements, du plus petit au plus grand.</p>
             <div class="demo-meta">
-              <span>👶 4–6 ans</span>
+              <span>
+                <svg class="icon-ui" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                4–6 ans
+              </span>
               <span class="neutral">Comparaison &amp; classement</span>
               <span class="neutral">Glisser-déposer ordonné</span>
             </div>
           </div>
           <button class="sound-toggle on" id="soundToggle3" aria-label="Activer ou désactiver le son">
-            <span class="sound-icon">🔊</span> Son
+            <span class="sound-icon">
+              <svg class="icon-ui" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            </span> Son
           </button>
         </div>
         <div class="demo-hud">
@@ -1847,16 +2070,24 @@ section[id] { scroll-margin-top: 100px; }
       <div class="demo-card">
         <div class="demo-card-head">
           <div>
-            <h3>🧩 Compléter la suite</h3>
+            <h3>
+              <svg class="icon-ui" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+              Compléter la suite
+            </h3>
             <p>Observe la suite logique et choisis l'élément manquant.</p>
             <div class="demo-meta">
-              <span>👶 5–7 ans</span>
+              <span>
+                <svg class="icon-ui" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                5–7 ans
+              </span>
               <span class="neutral">Logique &amp; observation</span>
               <span class="neutral">Choisir l'élément manquant</span>
             </div>
           </div>
           <button class="sound-toggle on" id="soundToggle4" aria-label="Activer ou désactiver le son">
-            <span class="sound-icon">🔊</span> Son
+            <span class="sound-icon">
+              <svg class="icon-ui" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            </span> Son
           </button>
         </div>
         <div class="demo-hud">
@@ -1876,16 +2107,24 @@ section[id] { scroll-margin-top: 100px; }
       <div class="demo-card">
         <div class="demo-card-head">
           <div>
-            <h3>🧭 Le défi du petit explorateur</h3>
+            <h3>
+              <svg class="icon-ui" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+              Le défi du petit explorateur
+            </h3>
             <p>Un parcours en 4 étapes : mémoire, intrus, calcul et classement.</p>
             <div class="demo-meta">
-              <span>👶 6–8 ans</span>
+              <span>
+                <svg class="icon-ui" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                6–8 ans
+              </span>
               <span class="neutral">Logique, mémoire, calcul, observation</span>
               <span class="neutral">Parcours multi-étapes</span>
             </div>
           </div>
           <button class="sound-toggle on" id="soundToggle5" aria-label="Activer ou désactiver le son">
-            <span class="sound-icon">🔊</span> Son
+            <span class="sound-icon">
+              <svg class="icon-ui" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            </span> Son
           </button>
         </div>
         <div class="demo-hud">
@@ -1945,7 +2184,7 @@ section[id] { scroll-margin-top: 100px; }
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow"><span class="eyebrow-dot"></span>Équipements</span>
-      <h2>Multi-plateforme &amp; universel</h2>
+      <h2>Compatible avec vos équipements</h2>
       <p>Accès simple via navigateur web standard sur tout type de support supportant un écran.</p>
     </div>
 
@@ -2026,6 +2265,98 @@ section[id] { scroll-margin-top: 100px; }
         <p>Développement continu selon les besoins spécifiques des éditeurs.</p>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- ================= TARIFS / NOS OFFRES ================= -->
+<section class="pricing" id="tarifs">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="eyebrow-dot"></span>Nos offres</span>
+      <h2>Nos offres pour vos projets pédagogiques</h2>
+      <p>Choisissez l'offre adaptée à votre projet, que vous soyez un éditeur, une école ou un professionnel de l'éducation.</p>
+    </div>
+
+    <div class="pricing-grid stagger">
+
+      <!-- 01 — ESSAI GRATUIT -->
+      <article class="price-card reveal">
+        <div class="price-num">01 — ESSAI GRATUIT</div>
+        <div class="price-tag">0 <small>DH</small></div>
+        <h3>1 exercice interactif offert</h3>
+        <p class="price-desc">
+          Testez gratuitement notre solution et découvrez comment vos contenus pédagogiques peuvent devenir des activités numériques interactives et attractives.
+        </p>
+        <ul class="price-features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            1 exercice interactif
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Découverte de notre solution
+          </li>
+        </ul>
+        <a href="#contact" class="btn btn-outline btn-lg">Commencer gratuitement</a>
+      </article>
+
+      <!-- 02 — PACK STANDARD -->
+      <article class="price-card featured reveal">
+        <span class="price-badge">Le plus choisi</span>
+        <div class="price-num">02 — PACK STANDARD</div>
+        <div class="price-tag">999 <small>DH</small></div>
+        <h3>30 exercices interactifs</h3>
+        <p class="price-desc">
+          Transformez une série d'exercices, un chapitre ou une partie de votre contenu pédagogique en activités numériques prêtes à être utilisées.
+        </p>
+        <ul class="price-features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            30 exercices interactifs
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Intégration QR code
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+           Mise en ligne incluse pour la première année
+          </li>
+        </ul>
+        <a href="#contact" class="btn btn-primary btn-lg">Choisir ce pack</a>
+      </article>
+
+      <!-- 03 — PROJET SUR MESURE -->
+      <article class="price-card reveal">
+        <div class="price-num">03 — PROJET SUR MESURE</div>
+        <div class="price-tag">SUR DEVIS</div>
+        <h3>Une solution conçue pour votre projet</h3>
+        <p class="price-desc">
+          Pour les maisons d'édition, écoles et professionnels de l'éducation souhaitant développer un projet numérique complet et personnalisé.
+        </p>
+        <ul class="price-features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Nombre d'exercices selon vos besoins
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Design et identité visuelle personnalisés
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Accompagnement complet
+          </li>
+        </ul>
+        <a href="#contact" class="btn btn-yellow btn-lg">Demander un devis</a>
+      </article>
+
+    </div>
+
+    <p class="price-note reveal">
+      Les frais de mise en ligne et d’hébergement sont calculés séparément selon les besoins du projet.
+
+    </p>
   </div>
 </section>
 
@@ -2127,6 +2458,7 @@ section[id] { scroll-margin-top: 100px; }
         <ul>
           <li><a href="#accueil">Accueil</a></li>
           <li><a href="#activites">Nos activités</a></li>
+          <li><a href="#tarifs">Tarifs</a></li>
           <li><a href="#editeurs">Éditeurs</a></li>
           <li><a href="#demonstrations">Essayez en direct</a></li>
         </ul>
@@ -2146,8 +2478,7 @@ section[id] { scroll-margin-top: 100px; }
         <h4>Contact</h4>
         <ul>
           <li><a href="https://wa.me/212522000000" target="_blank" rel="noopener">WhatsApp Direct</a></li>
-          <li><a href="mailto:contact@ludibook.ma">contact@ludibook.ma</a></li>
-          <li>Casablanca, Maroc</li>
+          <li><a href="mailto:Ludibook@gmail.com">Ludibook@gmail.com</a></li>
         </ul>
       </div>
     </div>
@@ -2329,7 +2660,9 @@ section[id] { scroll-margin-top: 100px; }
     tog.addEventListener('click', function(){
       var on = !tog.classList.contains('on');
       tog.classList.toggle('on', on);
-      tog.querySelector('.sound-icon').textContent = on ? '🔊' : '🔇';
+      tog.querySelector('.sound-icon').innerHTML = on
+        ? '<svg class="icon-ui" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>'
+        : '<svg class="icon-ui" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>';
       AudioEngine.setEnabled(on);
       if (on) AudioEngine.click();
     });
