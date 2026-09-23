@@ -945,8 +945,35 @@ section[id] { scroll-margin-top: 90px; }
   .profile-hero h1 { font-size: clamp(1.7rem, 6vw, 2.1rem); }
   .profile-hero p.lead { font-size: 1rem; }
   .hero-visual { display: none; }
-  .hero-actions { width: 100%; gap: 10px; }
-  .hero-actions .btn { flex: 1 1 100%; width: 100%; }
+
+  /* ===== HERO ACTIONS : boutons plus petits et côte à côte sur smartphone ===== */
+  .hero-actions {
+    width: 100%;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+  .hero-actions .btn,
+  .hero-actions .btn-lg {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 11px 14px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    gap: 6px;
+    min-height: 42px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .hero-actions .btn-arrow {
+    width: 18px;
+    height: 18px;
+    font-size: 0.75rem;
+    background: rgba(255, 255, 255, 0.25);
+  }
+  .hero-actions .btn-outline .btn-arrow {
+    background: rgba(79, 70, 229, 0.12);
+  }
 
   /* Header nav */
   .nav { height: 66px; }
@@ -977,28 +1004,32 @@ section[id] { scroll-margin-top: 90px; }
 
   /* Démonstrations */
   .demos { padding: 44px 0; }
+
+  /* ===== TABS DES ACTIVITÉS : empilées verticalement (une sous l'autre) ===== */
   .demo-tabs {
-    display: flex; flex-wrap: nowrap;
-    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
     justify-content: flex-start;
-    padding-bottom: 8px;
-    margin: 0 -18px 24px;
-    padding-left: 18px; padding-right: 18px;
     gap: 8px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    margin-bottom: 24px;
+    padding: 0;
+    overflow: visible;
+    scroll-snap-type: none;
   }
-  .demo-tabs::-webkit-scrollbar { display: none; }
   .demo-tab {
     flex: 0 0 auto;
-    scroll-snap-align: start;
-    white-space: nowrap;
-    padding: 10px 16px;
-    font-size: 0.82rem;
-    min-height: 42px;
+    width: 100%;
+    justify-content: center;
+    padding: 12px 18px;
+    font-size: 0.88rem;
+    min-height: 46px;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.25;
   }
-  .demo-tab .icon-ui { width: 16px; height: 16px; }
+  .demo-tab .icon-ui { width: 18px; height: 18px; flex-shrink: 0; }
 
   .demo-card { padding: 20px 16px; border-radius: var(--radius-md); }
   .demo-card-head { flex-direction: column; align-items: stretch; gap: 12px; }
@@ -1112,6 +1143,19 @@ section[id] { scroll-margin-top: 90px; }
   .profile-hero h1 { font-size: 1.55rem; }
   .profile-hero p.lead { font-size: 0.95rem; margin-bottom: 20px; }
 
+  /* Hero boutons encore plus petits */
+  .hero-actions {
+    gap: 8px;
+  }
+  .hero-actions .btn,
+  .hero-actions .btn-lg {
+    padding: 10px 10px;
+    font-size: 0.76rem;
+    gap: 5px;
+    min-height: 40px;
+  }
+  .hero-actions .btn-arrow { width: 16px; height: 16px; font-size: 0.7rem; }
+
   .logo { font-size: 1.15rem; gap: 8px; }
   .logo-mark { width: 34px; height: 34px; border-radius: 10px; }
   .logo-mark svg { width: 18px; height: 18px; }
@@ -1131,7 +1175,7 @@ section[id] { scroll-margin-top: 90px; }
 
   .demo-card { padding: 18px 14px; }
   .demo-card-head h3 { font-size: 1rem; }
-  .demo-tab { padding: 9px 14px; font-size: 0.78rem; gap: 6px; }
+  .demo-tab { padding: 11px 14px; font-size: 0.82rem; gap: 8px; min-height: 44px; }
   .demo-stage { padding: 18px 12px; min-height: 160px; }
 
   .shape-piece { width: 54px; height: 54px; border-radius: 12px; padding: 5px; }
@@ -1168,6 +1212,19 @@ section[id] { scroll-margin-top: 90px; }
   .profile-hero h1 { font-size: 1.4rem; }
   .profile-hero p.lead { font-size: 0.9rem; }
 
+  /* Hero boutons encore plus compacts */
+  .hero-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .hero-actions .btn,
+  .hero-actions .btn-lg {
+    flex: 1 1 100%;
+    padding: 12px 14px;
+    font-size: 0.82rem;
+    min-height: 42px;
+  }
+
   .logo span { font-size: 1.05rem; }
   .logo-mark { width: 32px; height: 32px; }
   .burger { width: 40px; height: 40px; }
@@ -1179,7 +1236,7 @@ section[id] { scroll-margin-top: 90px; }
 
   .st-canvas { width: 120px; height: 120px; }
 
-  .demo-tab { padding: 8px 12px; font-size: 0.74rem; }
+  .demo-tab { padding: 10px 12px; font-size: 0.78rem; }
   .demo-card-head h3 { font-size: 0.94rem; }
 
   .price-tag { font-size: 1.8rem; }
@@ -1796,7 +1853,7 @@ section[id] { scroll-margin-top: 90px; }
         </div>
       </section>
 
-      <!-- TARIFS SCHOOLS (sans QR code) -->
+      <!-- TARIFS SCHOOLS -->
       <section id="scl-offres" data-section="offres" style="background:var(--bg-subtle);">
         <div class="container">
           <div class="section-head reveal"><span class="eyebrow yellow"><span class="eyebrow-dot"></span>Tarifs</span><h2>Choisissez la formule qui correspond à vos besoins</h2></div>
@@ -1965,7 +2022,6 @@ section[id] { scroll-margin-top: 90px; }
     </button>
     <div class="modal-head">
       <span class="eyebrow"><span class="eyebrow-dot"></span>Bienvenue chez Ludibook</span>
-      <h2>Vous êtes…</h2>
       <p>Choisissez votre profil pour découvrir l'offre Ludibook la plus adaptée à votre situation.</p>
     </div>
     <div class="modal-choices">
@@ -2116,7 +2172,6 @@ section[id] { scroll-margin-top: 90px; }
     });
   }
 
-  /* DÉFINITIONS */
   var SHAPE_DEFS = [
     { id:'circle', name:'Cercle', color:'#4F46E5',
       solid:'<svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="#4F46E5"/></svg>',
@@ -2139,9 +2194,6 @@ section[id] { scroll-margin-top: 90px; }
     { a:35, b:17, answer:52, options:[42,51,52,53] }
   ];
 
-  /* ============================================================
-     INIT THERMOSTAT (scoped)
-     ============================================================ */
   function initThermostat(scopeEl){
     var slider = scopeEl.querySelector('.st-slider');
     var tempVal = scopeEl.querySelector('.st-temp-val');
@@ -2245,9 +2297,6 @@ section[id] { scroll-margin-top: 90px; }
     animate();
   }
 
-  /* ============================================================
-     INIT D'UNE INSTANCE DE DÉMOS
-     ============================================================ */
   function initDemoInstance(scopeEl){
     var tabs = scopeEl.querySelectorAll('.demo-tab');
     var panels = scopeEl.querySelectorAll('.demo-panel');
@@ -2289,7 +2338,6 @@ section[id] { scroll-margin-top: 90px; }
       });
     });
 
-    /* FORMES */
     var shapesFound = 0, shapesMoves = 0, shapesSelected = null;
 
     function buildShapes(){
@@ -2387,7 +2435,6 @@ section[id] { scroll-margin-top: 90px; }
       });
     }
 
-    /* ADDITIONS */
     var addIndex = 0, addScore = 0, addAnswered = false, addTimerId = null, addSeconds = 0, addFinished = false;
     function formatTime(sec){ var m = Math.floor(sec/60); var s = sec%60; return (m<10?'0':'')+m+':'+(s<10?'0':'')+s; }
     function stopAddTimer(){ if (addTimerId) { clearInterval(addTimerId); addTimerId = null; } }
@@ -2483,10 +2530,8 @@ section[id] { scroll-margin-top: 90px; }
       if (perfect) AudioEngine.win(); else AudioEngine.success();
     }
 
-    /* INIT THERMOSTAT */
     initThermostat(scopeEl);
 
-    /* RESET */
     scopeEl.querySelectorAll('[data-demo-reset]').forEach(function(btn){
       btn.addEventListener('click', function(){
         var t = btn.dataset.demoReset;
@@ -2500,9 +2545,6 @@ section[id] { scroll-margin-top: 90px; }
     buildAdditions();
   }
 
-  /* ============================================================
-     GESTION DU SITE / PROFIL / MODAL
-     ============================================================ */
   var site = document.getElementById('site');
   var modal = document.getElementById('profileModal');
   var modalClose = document.getElementById('modalClose');
@@ -2534,7 +2576,6 @@ section[id] { scroll-margin-top: 90px; }
     var prefix = (currentProfile === 'school') ? 'scl-' : 'pub-';
     var el = document.getElementById(prefix + name);
     if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
-    // fermer menu mobile si ouvert
     var nl = document.getElementById('navLinks');
     var bg = document.getElementById('burger');
     if (nl && nl.classList.contains('open')) {
@@ -2602,7 +2643,6 @@ section[id] { scroll-margin-top: 90px; }
     : null;
   document.querySelectorAll('.reveal').forEach(function(el){ if (io) io.observe(el); else el.classList.add('visible'); });
 
-  /* INIT DEMOS */
   document.querySelectorAll('.demo-instance').forEach(function(inst){
     if (inst.dataset.init !== '1') {
       initDemoInstance(inst);
